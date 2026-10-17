@@ -515,7 +515,7 @@ tr:hover .av,.stu:hover .av,.li:hover .av{transform:scale(1.1) rotate(-4deg)}
 <section id="s-log" class="sec"><h1 class="pt">سجل التحديثات</h1>
  <div class="kpis" id="logK"></div>
  <div class="card"><div class="grid"><div><label>المستخدم</label><select id="logU" onchange="renderLog()"></select></div><div><label>العملية</label><select id="logA" onchange="renderLog()"><option value="">الكل</option><option value="add">إضافة</option><option value="edit">تعديل</option><option value="del">حذف</option></select></div><div><label>القسم</label><select id="logE" onchange="renderLog()"></select></div><div><label>اليوم</label><input type="date" id="logD" onchange="renderLog()"></div><div><label>بحث</label><input id="logQ" placeholder="🔍 اسم طالب أو تفصيل" oninput="renderLog()"></div></div>
-  <div class="acts"><button class="btn b-out b-sm" onclick="['logU','logA','logE','logD','logQ'].forEach(i=>$(i).value='');renderLog()">مسح الفلاتر</button></div></div>
+  <div class="acts"><button class="btn b-out b-sm" onclick="['logU','logA','logE','logD','logQ'].forEach(i=>$(i).value='');renderLog()">مسح الفلاتر</button> <button class="btn b-red b-sm" onclick="clearLog()">🗑 مسح السجل بالكامل</button></div></div>
  <div class="card"><h2>🕘 العمليات <span class="bd" id="logN">0</span></h2><div class="tw"><table><thead><tr><th>الوقت</th><th>المستخدم</th><th>العملية</th><th>القسم</th><th>التفاصيل</th></tr></thead><tbody id="logB"></tbody></table></div><div class="hint">بيتعرض آخر 400 عملية مطابقة للفلتر. اسم المستخدم بتغيّره من زرار 👤 في الشريط الجانبي.</div></div>
 </section>
 </main>
@@ -585,6 +585,9 @@ function updOp(){$('opB').textContent='👤 '+opName()}
 function setOp(){const n=prompt('اسم المستخدم اللي هيتسجل في سجل التحديثات:',opName());if(n&&n.trim()){localStorage.setItem('idos_op',n.trim());updOp();toast('تم ✔')}}
 function lg(act,ent,desc){DB.log.push({id:uid(),ts:new Date().toISOString(),user:opName(),act,ent,desc});if(DB.log.length>2000)DB.log=DB.log.slice(-2000)}
 const ACT={add:['إضافة','g'],edit:['تعديل',''],del:['حذف','r']};
+function clearLog(){if(!isAdmin())return;const n=DB.log.length;if(!n)return toast('السجل فاضي','err');
+ if(!confirm('هيتم مسح كل سجل التحديثات ('+n+' عملية) نهائياً ومش هينفع ترجعه. تكمل؟'))return;
+ DB.log=[];lg('del','السجل','مسح سجل التحديثات بالكامل ('+n+' عملية)');save();renderLog();toast('تم مسح السجل ✔')}
 function renderLog(){if(!isAdmin())return;const L=DB.log.slice().reverse();
  const keep=(id,h)=>{const e=$(id),v=e.value;e.innerHTML=h;if([...e.options].some(o=>o.value===v))e.value=v};
  keep('logU','<option value="">كل المستخدمين</option>'+[...new Set(L.map(x=>x.user))].map(u=>`<option>${esc(u)}</option>`).join(''));
