@@ -395,6 +395,32 @@ tr:hover .av,.stu:hover .av,.li:hover .av{transform:scale(1.1) rotate(-4deg)}
 }
 
 .rp-par{background:#0b0b0e;color:#f3ecd0;border-right:6px solid #ffd84a;border-radius:12px;padding:8px 14px;font-size:11px;line-height:1.8}.rp-par b{display:block;color:#ffd84a;font-size:11.5px}
+/* ===== صورة الطالب + كارت ID ===== */
+.phrow{display:flex;gap:14px;align-items:center}.phprev{flex:none;width:76px;height:76px;border-radius:50%;background:#f1f2fb;display:grid;place-items:center;font-size:28px;overflow:hidden;border:2px dashed #c7cbe8}.phprev img{width:100%;height:100%;object-fit:cover;display:block}
+.av.ph{padding:0;overflow:hidden;background:#fff}.av.ph img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
+.idprev{direction:ltr;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;background:#eceefb;border-radius:16px;padding:18px}
+.idc{position:relative;width:85.6mm;height:54mm;border-radius:3mm;overflow:hidden;direction:ltr;text-align:left;color:#fff;font-family:'IBM Plex Sans Arabic',sans-serif;background:linear-gradient(135deg,#0b0b0e 0%,#1c1a14 62%,#2b2308 100%);flex:none;box-shadow:0 .4mm 1.8mm rgba(0,0,0,.35);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.idc *{box-sizing:border-box;margin:0}
+.idc::after{content:"";position:absolute;inset:1.2mm;border:.25mm solid rgba(255,216,74,.6);border-radius:2.1mm;pointer-events:none}
+.idc .sl{position:absolute;left:0;top:0;width:31mm;height:54mm}
+.idc .bar{position:absolute;left:0;right:0;bottom:0;height:3.4mm;background:linear-gradient(90deg,#8a6500,#ffe36e 50%,#d9a400);display:flex;align-items:center;justify-content:flex-end;padding:0 5mm}.idc .bar span{font-size:1.5mm;letter-spacing:.5mm;font-weight:700;color:#0b0b0e}
+.idc .org{position:absolute;left:33.5mm;top:4.2mm;line-height:1.4;max-width:38mm;white-space:nowrap}.idc .org small{display:block;font-size:1.5mm;letter-spacing:.12mm;color:#ffd84a;font-weight:600;text-transform:uppercase}.idc .org b{display:block;font-size:1.5mm;letter-spacing:.12mm;color:#fff;font-weight:500;text-transform:uppercase}
+.idc .lg{position:absolute;right:4.6mm;top:3.2mm;width:9.5mm;height:9.5mm;object-fit:contain;border-radius:50%}
+.idc .mono{position:absolute;right:4.6mm;top:3.2mm;width:9.5mm;height:9.5mm;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffe36e,#d9a400);color:#0b0b0e;font-weight:700;font-size:5.5mm}
+.idc .ph{position:absolute;left:4.2mm;top:12.5mm;width:21.5mm;height:27.5mm;border-radius:2mm;border:.8mm solid #0b0b0e;background:#fff;overflow:hidden;box-shadow:0 .6mm 1.6mm rgba(0,0,0,.45);display:grid;place-items:center}
+.idc .ph img{width:100%;height:100%;object-fit:cover;display:block}.idc .ph span{font-size:11mm;font-weight:700;color:#8a6500}
+.idc .nm{position:absolute;left:33.5mm;right:4.6mm;top:15.2mm;font-weight:700;line-height:1.18;max-height:11mm;overflow:hidden;color:#fff;letter-spacing:.05mm}
+.idc .rw{position:absolute;left:33.5mm;right:4.6mm}.idc .rw small{display:block;font-size:1.65mm;letter-spacing:.3mm;color:#ffd84a;font-weight:600;text-transform:uppercase;line-height:1.2}.idc .rw b{display:block;font-size:2.8mm;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25}
+.idc .tag{position:absolute;left:33.5mm;top:11.3mm;font-size:1.7mm;letter-spacing:.4mm;font-weight:700;color:#0b0b0e;background:#ffd84a;border-radius:2mm;padding:.2mm 1.6mm}
+.idc.b{background:radial-gradient(circle at 50% 42%,#2b2308 0%,#0b0b0e 70%)}
+.idc.b .pat{position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,216,74,.07) 0 .35mm,transparent .35mm 3.2mm)}
+.idc.b .lgb{position:absolute;left:50%;top:9mm;width:21mm;height:21mm;margin-left:-10.5mm;object-fit:contain;border-radius:50%}.idc.b .monob{position:absolute;left:50%;top:9mm;width:21mm;height:21mm;margin-left:-10.5mm;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffe36e,#d9a400);color:#0b0b0e;font-weight:700;font-size:12mm}
+.idc.b .bt{position:absolute;left:0;right:0;top:32.5mm;text-align:center;line-height:1.5}.idc.b .bt b.ar{display:block;direction:rtl;font-size:4.6mm;color:#ffd84a;font-weight:700;line-height:1.4}.idc.b .bt small{display:block;font-size:1.9mm;color:#e9e4d2;letter-spacing:.3mm;text-transform:uppercase;margin-top:.6mm}
+.idp{direction:ltr;width:210mm;height:297mm;background:#fff;position:relative;overflow:hidden;page-break-after:always;break-after:page;display:grid;grid-template-columns:repeat(2,85.6mm);grid-auto-rows:54mm;gap:2.4mm 3mm;justify-content:center;align-content:center;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.idp .idc{box-shadow:none;outline:.12mm solid #c9c9c9}
+.idp.one{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16mm}.idp.one>div{display:flex;flex-direction:column;align-items:center;gap:3mm}.idcap{font:600 3.2mm 'IBM Plex Sans Arabic',sans-serif;letter-spacing:.8mm;color:#8a8574}
+#pdfStage .idp{width:794px;height:1122px}
+@media print{body.pr-rep .idp{direction:ltr;width:210mm;height:296.6mm}}
 </style></head><body>
 <aside>
   <div class="brand"><img src="logo.png" alt="IDOS" onerror="this.style.display='none'"><b>منظمة إيدوس الدولية<br>للسوروبان</b><small>International Delta Organization for Soroban</small></div>
@@ -413,10 +439,12 @@ tr:hover .av,.stu:hover .av,.li:hover .av{transform:scale(1.1) rotate(-4deg)}
 <section id="s-reg" class="sec"><h1 class="pt">تسجيل الطلاب</h1>
  <div class="card"><h2 id="regT">طالب جديد</h2>
   <form onsubmit="saveStu(event)"><div class="grid">
-   <div><label>اسم الطالب *</label><input id="rName"></div>
+   <div><label>اسم الطالب *</label><input id="rName" oninput="autoEn()"></div>
+   <div><label>الاسم بالإنجليزي (للكارت)</label><input id="rNameEn" dir="ltr" placeholder="بيتكتب تلقائياً وتقدر تعدله" oninput="enTouched=true"></div>
    <div><label>الأكاديمية *</label><div class="wa"><select id="rAc"></select><button type="button" onclick="openAc()">＋</button></div></div>
    <div><label>المدرب (بياخد الباقي)</label><div class="wa"><select id="rTr" onchange="calcPrev()"></select><button type="button" onclick="openTr()">＋</button></div></div>
    <div><label>الليفل *</label><select id="rLv"></select></div>
+   <div style="grid-column:1/-1"><label>صورة الطالب (اختياري)</label><div class="phrow"><div class="phprev" id="phPrev">📷</div><div><input type="file" id="phFile" accept="image/*" hidden onchange="onPhoto(this)"><button type="button" class="btn b-out b-sm" onclick="$('phFile').click()">📷 اختيار / تصوير صورة</button> <button type="button" class="btn b-red b-sm" id="phDel" style="display:none" onclick="clearPhoto()">إزالة الصورة</button><div class="hint" id="phH">بتتضغط تلقائياً لحجم صغير جداً (حوالي 10 KB) عشان توفّر المساحة</div></div></div></div>
    <div><label>التليفون (واتساب)</label><input id="rPhone" type="tel"></div>
    <div><label>تاريخ الميلاد</label><input id="rBirth" type="date"></div>
    <div><label>تاريخ الانضمام</label><input id="rJoin" type="date"></div>
@@ -430,6 +458,7 @@ tr:hover .av,.stu:hover .av,.li:hover .av{transform:scale(1.1) rotate(-4deg)}
   <div class="acts"><button class="btn b-gold" id="regB">💾 حفظ الطالب</button><button type="button" class="btn b-out" onclick="resetForm()">جديد</button></div></form></div>
  <div class="card"><h2>الطلاب المسجلين <span class="bd" id="stuN">0</span></h2>
   <div class="grid" style="margin-bottom:12px"><input id="q" placeholder="🔍 بحث بالاسم أو التليفون" oninput="renderStu()"><select id="fAc" onchange="renderStu()"></select><select id="fTr" onchange="renderStu()"></select><select id="fLv" onchange="renderStu()"></select></div>
+  <div class="acts" style="margin:0 0 12px"><button class="btn b-ink b-sm" onclick="idPrintList(stuList())">🪪 طباعة كروت المعروضين</button><button class="btn b-out b-sm" onclick="idPdfList(stuList())">📄 PDF كروت المعروضين</button></div>
   <div class="tw"><table><thead><tr><th>#</th><th>الطالب</th><th>الأكاديمية</th><th>المدرب</th><th>الليفل</th><th>الحساب</th><th>الدفع</th><th>حصة الأكاديمية</th><th>التليفون</th><th>الانضمام</th><th>السن</th><th></th></tr></thead><tbody id="stuB"></tbody></table></div></div>
 </section>
 
@@ -520,6 +549,10 @@ tr:hover .av,.stu:hover .av,.li:hover .av{transform:scale(1.1) rotate(-4deg)}
 </section>
 </main>
 
+<div class="modal" id="idM" onclick="if(event.target===this)closeId()"><div class="box" style="width:min(780px,100%)"><h2 style="margin-bottom:12px">🪪 كارت الطالب</h2><div class="idprev" id="idPrev"></div>
+ <div class="grid" style="margin-top:14px"><div><label>الاسم بالإنجليزي</label><input id="idN" dir="ltr" oninput="idLive()"></div><div><label>الأكاديمية (إنجليزي)</label><input id="idA" dir="ltr" oninput="idLive()"></div><div><label>المدرب (إنجليزي)</label><input id="idT" dir="ltr" oninput="idLive()"></div></div>
+ <div class="hint">الترجمة تلقائية وتقريبية، عدّل أي اسم وهيتحفظ للكارت.</div>
+ <div class="acts"><button class="btn b-gold" onclick="idSave()">💾 حفظ الأسماء</button><button class="btn b-ink" onclick="idPrint()">🖨 طباعة</button><button class="btn b-out" onclick="idPdf()">📄 PDF</button><button class="btn b-out" onclick="closeId()">إغلاق</button></div></div></div>
 <div class="modal" id="acM" onclick="if(event.target===this)closeAc()"><div class="box"><h2 style="margin-bottom:12px">🏫 إدارة الأكاديميات</h2>
  <div class="wa" style="margin-bottom:14px"><input id="newAc" placeholder="اسم أكاديمية جديدة" onkeydown="if(event.key==='Enter')addAc()"><button style="width:auto;padding:0 18px;font:inherit" onclick="addAc()">إضافة</button></div>
  <div id="acL"></div><div class="acts"><button class="btn b-out" onclick="closeAc()">إغلاق</button></div></div></div>
@@ -572,7 +605,7 @@ const auth=firebase.auth(),fs=firebase.firestore();fs.enablePersistence({synchro
 let CUID=null,pushT=null;const last={},KEYS=Object.keys(DEF);
 function save(){localStorage.setItem(KEY,JSON.stringify(DB));if(!CUID)return;clearTimeout(pushT);pushT=setTimeout(pushCloud,400)}
 async function pushCloud(){const b=fs.batch();let n=0;for(const k of KEYS){const s=JSON.stringify(DB[k]);if(s!==last[k]){b.set(fs.doc(`users/${CUID}/data/${k}`),{v:JSON.parse(s)});last[k]=s;n++}}if(!n)return;try{await b.commit()}catch(e){console.error(e);KEYS.forEach(k=>delete last[k]);toast('فشل الحفظ على السيرفر','err')}}
-async function loadCloud(){const snap=await fs.collection(`users/${CUID}/data`).get();if(snap.empty){await pushCloud();return}snap.forEach(d=>{DB[d.id]=d.data().v;last[d.id]=JSON.stringify(d.data().v)});KEYS.forEach(k=>{if(DB[k]===undefined)DB[k]=structuredClone(DEF[k])});localStorage.setItem(KEY,JSON.stringify(DB))}
+async function loadCloud(){const snap=await fs.collection(`users/${CUID}/data`).get();if(snap.empty){await pushCloud();return}const got=new Set();snap.forEach(d=>{if(d.id.startsWith('photo_')){PH[d.id.slice(6)]=d.data().v;got.add(d.id.slice(6));return}DB[d.id]=d.data().v;last[d.id]=JSON.stringify(d.data().v)});savePH();for(const id in PH)if(!got.has(id)&&DB.students&&DB.students.some(x=>x.id===id))phDoc(id).set({v:PH[id]}).catch(()=>{});KEYS.forEach(k=>{if(DB[k]===undefined)DB[k]=structuredClone(DEF[k])});localStorage.setItem(KEY,JSON.stringify(DB))}
 async function doLogin(){try{await auth.signInWithEmailAndPassword($('lgE').value.trim(),$('lgP').value)}catch(e){toast('الإيميل أو الباسورد غلط','err')}}
 auth.onAuthStateChanged(async u=>{if(!u){CUID=null;$('login').style.display='flex';return}CUID=u.uid;try{await loadCloud()}catch(e){toast('شغال بالنسخة المحلية','err')}$('login').style.display='none';refresh()});
 const commit=()=>{save();refresh()};
@@ -603,7 +636,7 @@ function renderLog(){if(!isAdmin())return;const L=DB.log.slice().reverse();
 const IC=p=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';
 const TABS=[['home',IC('<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/>'),'الرئيسية'],['reg',IC('<path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/>'),'تسجيل الطلاب'],['att',IC('<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>'),'الحضور'],['eval',IC('<path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/>'),'التقييم'],['due',IC('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),'المؤجلات'],['an',IC('<path d="M4 20v-8M10 20V5M16 20v-5M21 20H3"/>'),'التحليل'],['prof',IC('<circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>'),'ملف الطالب'],['acc',IC('<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><circle cx="16.5" cy="14.5" r="1.2"/><path d="M7 6V4.5A1.5 1.5 0 0 1 8.5 3H17"/>'),'الحسابات'],['shop',IC('<path d="M5 4h13a1 1 0 0 1 1 1v14H6a2 2 0 0 0-2 2V6a2 2 0 0 1 1-2z"/><path d="M8 8h7"/>'),'الكتب والمستلزمات'],['exp',IC('<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>'),'المصروفات'],['log',IC('<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 8v4l3 2"/>'),'سجل التحديثات']];
 /* ===== صلاحيات الأدمن: ضع إيميل (أو إيميلات) الأدمن هنا — نفس إيميل الدخول على Firebase ===== */
-const ADMIN_EMAILS=['admin@idos.com'];
+const ADMIN_EMAILS=['ضع-ايميل-الادمن@gmail.com'];
 const isAdmin=()=>{const e=((auth.currentUser&&auth.currentUser.email)||'').trim().toLowerCase();return !!e&&ADMIN_EMAILS.some(x=>x.trim().toLowerCase()===e)};
 let navAdmin=null;
 function buildNav(){const a=isAdmin();if(a===navAdmin)return;navAdmin=a;const cur=(document.querySelector('.sec.on')||{id:'s-home'}).id.slice(2);
@@ -632,7 +665,7 @@ function togAc(id){openA.has(id)?openA.delete(id):openA.add(id);renderAcL()}
 function renderAcL(){const l=DB.academies.slice().sort(byName);$('acL').innerHTML=l.length?l.map(a=>{const st=DB.students.filter(s=>s.academy===a.id).sort(byName);return`<div><div class="li"><b>${esc(a.name)}</b><span class="bd g">${st.length} طالب</span><button class="btn b-out b-sm" onclick="togAc('${a.id}')">${openA.has(a.id)?'إخفاء':'عرض'}</button><button class="btn b-ink b-sm" onclick="renAc('${a.id}')">تعديل</button><button class="btn b-red b-sm" onclick="delAc('${a.id}')">حذف</button></div>${openA.has(a.id)?st.map(s=>`<div class="li sub"><span class="av">${esc(ini(s.name))}</span><b>${esc(s.name)}</b><span class="bd">${lvN(s.level)}</span><button class="btn b-ink b-sm" onclick="editStu('${s.id}')">تعديل</button><button class="btn b-red b-sm" onclick="delStu('${s.id}')">حذف</button></div>`).join('')||'<div class="empty">مفيش طلاب</div>':''}</div>`}).join(''):'<div class="empty">ضيف أول أكاديمية</div>'}
 function addAc(){const n=$('newAc').value.trim();if(!n)return;if(DB.academies.some(a=>a.name===n))return toast('موجودة قبل كده','err');DB.academies.push({id:uid(),name:n});lg('add','الأكاديميات','إضافة أكاديمية: '+n);$('newAc').value='';commit();toast('تمت الإضافة ✔')}
 function renAc(id){const old=acName(id),n=prompt('الاسم الجديد:',old);if(!n||!n.trim())return;DB.academies.find(a=>a.id===id).name=n.trim();lg('edit','الأكاديميات',`تغيير اسم أكاديمية: ${old} ← ${n.trim()}`);commit()}
-function delAc(id){const st=DB.students.filter(s=>s.academy===id);if(!confirm(st.length?`فيها ${st.length} طالب وهيتحذفوا مع حضورهم وتقييماتهم (الحسابات هتفضل). متأكد؟`:'حذف الأكاديمية؟'))return;lg('del','الأكاديميات',`حذف أكاديمية: ${acName(id)} (${st.length} طالب)`);DB.students=DB.students.filter(s=>s.academy!==id);for(const k of Object.keys(DB.att))if(k.endsWith('|'+id))delete DB.att[k];for(const k of Object.keys(DB.evals))if(k.endsWith('|'+id))delete DB.evals[k];DB.dues=DB.dues.filter(d=>stuById(d.studentId));DB.academies=DB.academies.filter(a=>a.id!==id);commit()}
+function delAc(id){const st=DB.students.filter(s=>s.academy===id);if(!confirm(st.length?`فيها ${st.length} طالب وهيتحذفوا مع حضورهم وتقييماتهم (الحسابات هتفضل). متأكد؟`:'حذف الأكاديمية؟'))return;lg('del','الأكاديميات',`حذف أكاديمية: ${acName(id)} (${st.length} طالب)`);st.forEach(x=>delPhoto(x.id));DB.students=DB.students.filter(s=>s.academy!==id);for(const k of Object.keys(DB.att))if(k.endsWith('|'+id))delete DB.att[k];for(const k of Object.keys(DB.evals))if(k.endsWith('|'+id))delete DB.evals[k];DB.dues=DB.dues.filter(d=>stuById(d.studentId));DB.academies=DB.academies.filter(a=>a.id!==id);commit()}
 
 /* ===== المدربين ===== */
 function openTr(){$('trM').classList.add('show');renderTrL();setTimeout(()=>$('newTr').focus(),80)}
@@ -660,6 +693,103 @@ function onBill(){const b=$('rBill').value;$('amtL').textContent=b==='month'?'ا
 function calcPrev(){const amt=+$('rAmt').value||0,priv=$('rAcct').value!=='academy',aEl=$('rAcAmt');aEl.disabled=priv;if(priv)aEl.value='';
  const aa=priv?0:(+aEl.value||0),a=acadCalc(amt,aa,amt),t=trById($('rTr').value);
  $('prev').innerHTML=`${$('rBill').value==='session'?'من كل حصة — ':''}المدفوع: <b>${money(amt)}</b> • حساب المدرب${t?' ('+esc(t.name)+')':''}: <b>${money(amt-a)}</b> • حساب الأكاديمية: <b>${money(a)}</b>`}
+/* ===== صور الطلاب (مضغوطة) ===== */
+let PH={};try{PH=JSON.parse(localStorage.getItem('idos_photos')||'{}')}catch(e){PH={}}
+let phNew,enTouched=false;
+const savePH=()=>{try{localStorage.setItem('idos_photos',JSON.stringify(PH))}catch(e){}};
+const phDoc=id=>fs.doc(`users/${CUID}/data/photo_${id}`);
+const fullDoc=id=>fs.doc(`users/${CUID}/photosfull/${id}`);let PF={};
+function setPhoto(id,o){PH[id]=o.t;PF[id]=o.f;savePH();if(CUID){phDoc(id).set({v:o.t}).catch(()=>toast('فشل رفع الصورة للسيرفر','err'));fullDoc(id).set({v:o.f}).catch(()=>{})}}
+function delPhoto(id){if(!(id in PH)&&!(id in PF))return;delete PH[id];delete PF[id];savePH();if(CUID){phDoc(id).delete().catch(()=>{});fullDoc(id).delete().catch(()=>{})}}
+/* الصورة الكبيرة للكارت بتتحمّل وقت الحاجة بس (مش مع بيانات النظام) */
+async function idEnsureFull(list){if(!CUID)return;const need=list.filter(s=>PH[s.id]&&!PF[s.id]);
+ for(let i=0;i<need.length;i+=10)await Promise.all(need.slice(i,i+10).map(async s=>{try{const d=await fullDoc(s.id).get();if(d.exists)PF[s.id]=d.data().v}catch(e){}}))}
+const avH=s=>PH[s.id]?`<span class="av ph"><img src="${PH[s.id]}" alt=""></span>`:`<span class="av">${esc(ini(s.name))}</span>`;
+/* ضغط الصورة: نسختين — كبيرة بورتريه (360×630 جودة ~85%) للكارت، وصغيرة (128px) للقوايم والتحليل */
+function compressImg(file){return new Promise((res,rej)=>{const u=URL.createObjectURL(file),im=new Image();
+ im.onload=()=>{URL.revokeObjectURL(u);const w=im.naturalWidth,h=im.naturalHeight,R=31/54;let cw=Math.min(w,h*R),ch=cw/R;if(ch>h){ch=h;cw=ch*R}
+  const sx=(w-cw)/2,sy=(h-ch)*.12,mk=(W,H,sx,sy,sw,sh,q,cap)=>{const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,W,H);g.imageSmoothingQuality='high';g.drawImage(im,sx,sy,sw,sh,0,0,W,H);let d=c.toDataURL('image/jpeg',q);while(d.length>cap&&q>.5){q-=.05;d=c.toDataURL('image/jpeg',q)}return d};
+  const FW=Math.min(360,Math.round(cw)),FH=Math.round(FW/R),f=mk(FW,FH,sx,sy,cw,ch,.85,110000);
+  const ts=Math.min(cw,ch*.62),t=mk(128,128,sx+(cw-ts)/2,sy+ch*.04,ts,ts,.72,9000);res({t,f})};
+ im.onerror=()=>{URL.revokeObjectURL(u);rej(new Error('img'))};im.src=u})}
+async function onPhoto(inp){const f=inp.files&&inp.files[0];inp.value='';if(!f)return;
+ try{phNew=await compressImg(f);showPh(phNew.t);$('phH').textContent='تم ضغط الصورة: '+(Math.round((phNew.f.length+phNew.t.length)*.75/102.4)/10)+' KB ✔'}catch(e){toast('الصورة دي مش مدعومة، جرّب JPG أو PNG','err')}}
+function showPh(u){$('phPrev').innerHTML=u?`<img src="${u}" alt="">`:'📷';$('phDel').style.display=u?'':'none'}
+function clearPhoto(){phNew=null;showPh(null);$('phH').textContent='هتتشال الصورة لما تحفظ'}
+function applyPhoto(id){if(phNew===undefined)return;phNew?setPhoto(id,phNew):delPhoto(id);phNew=undefined}
+function autoEn(){if(!enTouched)$('rNameEn').value=enName($('rName').value)}
+
+/* ===== تحويل الاسم العربي لإنجليزي (تقريبي وقابل للتعديل) ===== */
+const _nz=w=>w.replace(/[ً-ٰٟـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه');
+const NMR={'محمد':'Mohamed','أحمد':'Ahmed','محمود':'Mahmoud','مصطفى':'Mostafa','علي':'Ali','عمر':'Omar','يوسف':'Youssef','إبراهيم':'Ibrahim','إسماعيل':'Ismail','خالد':'Khaled','حسن':'Hassan','حسين':'Hussein','سيف':'Seif','كريم':'Karim','زياد':'Ziad','ياسين':'Yassin','يس':'Yassin','آدم':'Adam','مازن':'Mazen','مالك':'Malek','طارق':'Tarek','تامر':'Tamer','سامي':'Sami','سامح':'Sameh','سمير':'Samir','سعيد':'Saeed','عادل':'Adel','عصام':'Essam','عماد':'Emad','هاني':'Hany','هشام':'Hisham','وليد':'Walid','ياسر':'Yasser','رامي':'Ramy','رضوان':'Radwan','إيهاب':'Ehab','أمير':'Amir','أيمن':'Ayman','بلال':'Bilal','حمزة':'Hamza','عبدالله':'Abdullah','عبد الله':'Abdullah','عبدالرحمن':'Abdelrahman','مريم':'Mariam','سارة':'Sara','ليلى':'Laila','هنا':'Hana','هناء':'Hanaa','جنى':'Jana','نور':'Nour','نورا':'Noura','سلمى':'Salma','ملك':'Malak','فريدة':'Farida','فرح':'Farah','حبيبة':'Habiba','رنا':'Rana','رودينا':'Rodina','ريم':'Reem','ريماس':'Remas','لينا':'Lina','لجين':'Lujain','أسماء':'Asmaa','آية':'Aya','أروى':'Arwa','رحمة':'Rahma','زينب':'Zeinab','عائشة':'Aisha','فاطمة':'Fatma','خديجة':'Khadija','منى':'Mona','ندى':'Nada','هدى':'Hoda','دعاء':'Doaa','شهد':'Shahd','شروق':'Shorouk','يارا':'Yara','ميار':'Mayar','مي':'May','ميرنا':'Mirna','جودي':'Judy','تالا':'Tala','لانا':'Lana','سما':'Sama','عمار':'Ammar','معاذ':'Moaz','مؤمن':'Moamen','مروان':'Marwan','مجدي':'Magdy','ماجد':'Maged','نادر':'Nader','نبيل':'Nabil','ناصر':'Nasser','هيثم':'Haitham','وائل':'Wael','يحيى':'Yahya','إياد':'Eyad','أنس':'Anas','أسامة':'Osama','باسم':'Basem','بسمة':'Basma','جمال':'Gamal','حازم':'Hazem','حاتم':'Hatem','رشا':'Rasha','سليم':'Salim','سليمان':'Soliman','شادي':'Shady','شريف':'Sherif','صلاح':'Salah','طه':'Taha','عاصم':'Asem','عثمان':'Osman','علاء':'Alaa','عمرو':'Amr','غادة':'Ghada','فادي':'Fady','فارس':'Fares','كمال':'Kamal','ليث':'Layth','مهند':'Mohannad','موسى':'Moussa','نادين':'Nadine','نهى':'Noha','هبة':'Heba','هالة':'Hala','ولاء':'Walaa','يزن':'Yazan','يونس':'Younis','إسلام':'Islam','أدهم':'Adham','شيماء':'Shaimaa','سعد':'Saad','حنين':'Haneen','ريان':'Rayan','جاسم':'Gassem','نجلاء':'Naglaa','نسمه':'Nesma','سلطان':'Sultan','إبراهيم':'Ibrahim','السيد':'El-Sayed','الرحمن':'Rahman','الرحيم':'Rahim','العزيز':'Aziz','الحميد':'Hamid','المنعم':'Moneim','الفتاح':'Fattah','الكريم':'Karim','الغني':'Ghani','الحليم':'Halim','الباسط':'Basset','الناصر':'Nasser','الجواد':'Gawad','الوهاب':'Wahab','السلام':'Salam','الشافي':'Shafy','الله':'Allah','الشافعي':'El-Shafei','سعيد':'Saeed','عبد العزيز':'Abdelaziz','أكاديمية':'Academy','اكاديمية':'Academy','النخبة':'Elite','المستقبل':'Future','النور':'El-Nour','الأمل':'El-Amal','المتميزين':'Excellence','مركز':'Center','المركز':'Center','للسوروبان':'Soroban'};
+const NM={};for(const k in NMR)NM[_nz(k)]=NMR[k];
+const CM={'ب':'b','ت':'t','ث':'th','ج':'g','ح':'h','خ':'kh','د':'d','ذ':'z','ر':'r','ز':'z','س':'s','ش':'sh','ص':'s','ض':'d','ط':'t','ظ':'z','غ':'gh','ف':'f','ق':'q','ك':'k','ل':'l','م':'m','ن':'n','ه':'h'};
+function _tw(w){w=w.replace(/[ً-ٰٟـ]/g,'');const T=[],L=w.length;
+ for(let i=0;i<L;i++){const c=w[i];
+  if(CM[c])T.push(['c',CM[c]]);
+  else if(c==='ا'||c==='ع'||c==='ء')T.push(['v','a']);
+  else if(c==='أ'||c==='آ')T.push(['v','a']);else if(c==='إ')T.push(['v','e']);
+  else if(c==='ة'||c==='ى')T.push(['v','a']);
+  else if(c==='و')T.push(i===0?['c','w']:['v','o']);
+  else if(c==='ي')T.push(i===0?['c','y']:i===L-1?['v','y']:['v','i']);
+  else if(c==='ئ')T.push(['v','e']);else if(c==='ؤ')T.push(['v','o']);
+  else if(/[a-z0-9]/i.test(c))T.push(['v',c])}
+ let o='';T.forEach((t,i)=>{if(t[0]==='c'&&i>0&&T[i-1][0]==='c')o+='a';o+=t[1]});
+ return o.charAt(0).toUpperCase()+o.slice(1)}
+const _cap=x=>x?x.charAt(0).toUpperCase()+x.slice(1).toLowerCase():'';
+function enName(ar){if(!ar)return'';if(!/[؀-ۿ]/.test(ar))return ar.trim();
+ const ws=ar.replace(/[.،,]/g,' ').trim().split(/\s+/).filter(Boolean),out=[];
+ for(let i=0;i<ws.length;i++){const w=ws[i],k=_nz(w);
+  if(k==='م'&&i===0&&ws.length>1){out.push('Eng.');continue}
+  if(k==='عبد'&&ws[i+1]){const n2=_nz(ws[i+1]);if(n2==='الله'){out.push('Abdullah');i++;continue}const r=n2.replace(/^ال/,'');out.push('Abdel'+(NM[n2]||NM[r]||_tw(ws[i+1].replace(/^ال/,''))).toLowerCase());i++;continue}
+  if(NM[k]){out.push(NM[k]);continue}
+  if(k.startsWith('عبد')&&k.length>4){const r=k.slice(3).replace(/^ال/,'');out.push('Abdel'+(NM[k.slice(3)]||NM[r]||_tw(w.replace(/^عبد(ال)?/,''))).toLowerCase());continue}
+  if(k.startsWith('ال')&&k.length>3){const r=k.slice(2);out.push('El-'+(NM[r]||_tw(w.replace(/^ال/,''))));continue}
+  out.push(_tw(w))}
+ return out.join(' ')}
+
+/* ===== كارت الـ ID ===== */
+function idNames(s){const a=DB.academies.find(x=>x.id===s.academy)||{},t=trById(s.trainer)||{};return{n:s.nameEn||enName(s.name),a:a.en||enName(a.name||''),t:t.en||enName(t.name||'')}}
+function idLogo(safe,big){const c=big?'lgb':'lg',m=big?'monob':'mono';
+ if(safe)return LOGO_SAFE?`<img class="${c}" src="${LOGO_SAFE}" alt="">`:`<div class="${m}">I</div>`;
+ const src=(document.querySelector('.brand img')||{}).src;return src?`<img class="${c}" src="${src}" alt="" onerror="this.outerHTML='<div class=&quot;${m}&quot;>I</div>'">`:`<div class="${m}">I</div>`}
+const idFs=n=>n.length<=16?4.6:n.length<=24?4:n.length<=32?3.5:3.1;
+let _gc=0;
+function cardF(s,o,safe){const e=o||idNames(s),ph=PF[s.id]||PH[s.id],g=++_gc,pts='0,0 31,0 23.5,54 0,54';
+ const panel=`<svg class="sl" viewBox="0 0 31 54" preserveAspectRatio="none"><defs><linearGradient id="gSl${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe36e"/><stop offset=".55" stop-color="#d9a400"/><stop offset="1" stop-color="#8a6500"/></linearGradient><clipPath id="gCp${g}"><polygon points="${pts}"/></clipPath></defs><polygon points="${pts}" fill="url(#gSl${g})"/>${ph?`<image href="${ph}" x="0" y="0" width="31" height="54" preserveAspectRatio="xMidYMid slice" clip-path="url(#gCp${g})"/><polygon points="${pts}" fill="none" stroke="#ffd84a" stroke-width=".5"/>`:`<text x="12" y="33" text-anchor="middle" font-size="19" font-weight="700" fill="#5c4400" font-family="IBM Plex Sans Arabic,sans-serif">${esc((e.n||'?').charAt(0).toUpperCase())}</text>`}</svg>`;
+ return`<div class="idc f">${panel}<div class="org"><small>International Delta Organization</small><b>for Soroban</b></div>${idLogo(safe)}<div class="tag">STUDENT</div><div class="nm" style="font-size:${idFs(e.n)}mm">${esc(e.n)}</div><div class="rw" style="top:28.2mm"><small>Level</small><b>${s.level}</b></div><div class="rw" style="top:33.6mm"><small>Academy</small><b>${esc(e.a)}</b></div><div class="rw" style="top:39mm"><small>Trainer</small><b>${esc(e.t)}</b></div><div class="bar"><span>STUDENT ID CARD</span></div></div>`}
+const cardB=safe=>`<div class="idc b"><div class="pat"></div>${idLogo(safe,true)}<div class="bt"><b class="ar">منظمة إيدوس الدولية للسوروبان</b><small>International Delta Organization for Soroban</small></div><div class="bar"></div></div>`;
+function idPages(list,backs,safe){
+ if(list.length===1)return[`<div class="idp one"><div><div class="idcap">FRONT</div>${cardF(list[0],null,safe)}</div><div><div class="idcap">BACK</div>${cardB(safe)}</div></div>`];
+ const P=[];for(let i=0;i<list.length;i+=10){const ch=list.slice(i,i+10);P.push(`<div class="idp">${ch.map(s=>cardF(s,null,safe)).join('')}</div>`);if(backs)P.push(`<div class="idp">${ch.map(()=>cardB(safe)).join('')}</div>`)}return P}
+let idCur=null;
+async function idOpen(id){const s=stuById(id);if(!s)return;idCur=s;const e=idNames(s);$('idN').value=e.n;$('idA').value=e.a;$('idT').value=e.t;idLive();$('idM').classList.add('show');await idEnsureFull([s]);if(idCur===s)idLive()}
+function closeId(){$('idM').classList.remove('show');idCur=null}
+const idVals=()=>({n:$('idN').value.trim(),a:$('idA').value.trim(),t:$('idT').value.trim()});
+function idLive(){if(!idCur)return;$('idPrev').innerHTML=cardF(idCur,idVals())+cardB()}
+function idSave(quiet){if(!idCur)return;const v=idVals(),a=DB.academies.find(x=>x.id===idCur.academy),t=trById(idCur.trainer);idCur.nameEn=v.n;if(a)a.en=v.a;if(t)t.en=v.t;save();if(!quiet)toast('تم حفظ الأسماء ✔')}
+async function idLoadLogo(){await document.fonts.ready;LOGO_SAFE=await prepLogo()}
+async function idPrintList(list,backs=true){if(!list.length)return toast('مفيش طلاب','err');
+ if(list.length>60&&!confirm(`هيتطبع كروت ${list.length} طالب. تكمل؟`))return;
+ toast('جاري تجهيز الكروت...');await idLoadLogo();await idEnsureFull(list);const pa=$('printArea');pa.innerHTML=idPages(list,backs,true).join('');await waitImgs(pa);
+ document.body.classList.add('pr-rep');const done=()=>{document.body.classList.remove('pr-rep');pa.innerHTML='';window.removeEventListener('afterprint',done)};
+ window.addEventListener('afterprint',done);setTimeout(()=>window.print(),150)}
+async function idPdfList(list,backs=true,fname='كروت الطلاب'){
+ if(typeof html2canvas==='undefined'||!window.jspdf)return toast('المكتبات محتاجة اتصال بالنت','err');if(!list.length)return toast('مفيش طلاب','err');
+ const{jsPDF}=window.jspdf,stg=$('pdfStage'),ov=$('pdfOv');pdfCancel=false;scrollTo(0,0);stg.style.display='block';ov.style.display='flex';let pdf=null,done=0;
+ try{await idLoadLogo();await idEnsureFull(list);const P=idPages(list,backs,true);
+  for(let i=0;i<P.length&&!pdfCancel;i++){$('pdfN').textContent='كروت الطلاب';$('pdfC').textContent=(i+1)+' / '+P.length;
+   stg.innerHTML=P[i];await waitImgs(stg);await new Promise(r=>setTimeout(r,60));
+   const cv=await html2canvas(stg,{scale:3,backgroundColor:'#fff',scrollX:0,scrollY:0,width:794,height:1122,windowWidth:794});
+   if(!pdf)pdf=new jsPDF({orientation:'p',unit:'mm',format:'a4'});else pdf.addPage();
+   pdf.addImage(cv.toDataURL('image/jpeg',.95),'JPEG',0,0,210,297);done++;$('pdfB').style.width=(done/P.length*100)+'%'}
+  if(pdf&&!pdfCancel){pdf.save(fname+'.pdf');toast('تم تصدير الكروت ✔')}}
+ catch(e){console.error(e);toast('حصل خطأ في التصدير','err')}
+ finally{stg.style.display='none';stg.innerHTML='';ov.style.display='none';$('pdfB').style.width='0'}}
+const idPrint=()=>{if(!idCur)return;idSave(true);idPrintList([idCur])};
+const idPdf=()=>{if(!idCur)return;idSave(true);idPdfList([idCur],true,'كارت - '+idCur.name)};
+function stuList(){const q=$('q').value.trim(),ac=$('fAc').value,lv=$('fLv').value,tr=$('fTr').value;return DB.students.filter(s=>(!ac||s.academy===ac)&&(!tr||s.trainer===tr)&&(lv===''||String(s.level)===lv)&&(!q||s.name.includes(q)||(s.phone||'').includes(q))).sort(byName)}
+
 function saveStu(e){e.preventDefault();
  const name=$('rName').value.trim(),academy=$('rAc').value,level=$('rLv').value;
  if(!name||!academy||level==='')return toast('الاسم والأكاديمية والليفل لازم يتسجلوا','err');
@@ -667,9 +797,9 @@ function saveStu(e){e.preventDefault();
  if(amt<0||aa<0)return toast('مبلغ غير صحيح','err');if(amt>0&&aa>amt)return toast('حصة الأكاديمية أكبر من الاشتراك','err');
  const old=editing?stuById(editing):null,join=$('rJoin').value||(old&&old.join)||today();
  let h=old?(old.lvHist||[{d:old.join||today(),level:old.level}]):[{d:join,level:+level}];if(old&&old.level!==+level)h=[...h,{d:today(),level:+level}];
- const data={name,academy,trainer,level:+level,phone:$('rPhone').value.trim(),birth:$('rBirth').value,join,acct,billing,acadAmt:aa,lvHist:h,monthlyPrice:billing==='month'?amt:(old?monthlyPriceOf(old):0),sessionPrice:billing==='session'?amt:(old?(old.sessionPrice||0):0)};
+ const data={name,academy,trainer,level:+level,phone:$('rPhone').value.trim(),birth:$('rBirth').value,join,acct,billing,acadAmt:aa,lvHist:h,monthlyPrice:billing==='month'?amt:(old?monthlyPriceOf(old):0),sessionPrice:billing==='session'?amt:(old?(old.sessionPrice||0):0),nameEn:$('rNameEn').value.trim()||enName(name)};
  if(old){const ch=[],cmp=(l,a,b)=>{if(String(a??'')!==String(b??''))ch.push(`${l}: ${a||'—'} ← ${b||'—'}`)};
-  cmp('الاسم',old.name,data.name);cmp('الأكاديمية',acName(old.academy),acName(data.academy));cmp('المدرب',trNameOf(old),trNameOf(data));cmp('الليفل',old.level,data.level);cmp('التليفون',old.phone,data.phone);cmp('الانضمام',old.join,data.join);cmp('الحساب',old.acct==='academy'?'تبع الأكاديمية':'برايفت',acct==='academy'?'تبع الأكاديمية':'برايفت');cmp('طريقة الدفع',billOf(old)==='month'?'شهري':'حصة',billing==='month'?'شهري':'حصة');cmp('الاشتراك',baseOf(old),billing==='month'?data.monthlyPrice:data.sessionPrice);cmp('حصة الأكاديمية',acadAmtOf(old),aa);
+  cmp('الاسم',old.name,data.name);cmp('الأكاديمية',acName(old.academy),acName(data.academy));cmp('المدرب',trNameOf(old),trNameOf(data));cmp('الليفل',old.level,data.level);cmp('التليفون',old.phone,data.phone);cmp('الانضمام',old.join,data.join);cmp('الحساب',old.acct==='academy'?'تبع الأكاديمية':'برايفت',acct==='academy'?'تبع الأكاديمية':'برايفت');cmp('طريقة الدفع',billOf(old)==='month'?'شهري':'حصة',billing==='month'?'شهري':'حصة');cmp('الاشتراك',baseOf(old),billing==='month'?data.monthlyPrice:data.sessionPrice);cmp('حصة الأكاديمية',acadAmtOf(old),aa);if(phNew!==undefined)ch.push('الصورة: '+(phNew?'تم تغييرها':'تم حذفها'));
   lg('edit','الطلاب',`تعديل الطالب ${old.name}${ch.length?' — '+ch.join(' | '):' (بدون تغيير)'}`);Object.assign(old,data);toast('تم التعديل ✔')}
  else{if(DB.students.some(s=>s.name===name&&s.academy===academy))return toast('مسجل قبل كده في نفس الأكاديمية','err');
   const st={id:uid(),...data};DB.students.push(st);
@@ -678,14 +808,14 @@ function saveStu(e){e.preventDefault();
    if($('rPay').value==='defer')DB.dues.push({id:'du_'+st.id+'_'+ym,studentId:st.id,ym,amount:r2(amt),created:today(),remind:'',note:'',auto:false});
    else DB.payments.push(mkPay(st,amt,join,'اشتراك شهري '+ym,'month','pm_'+st.id+'_'+ym))}
   toast('تم التسجيل ✔')}
- resetForm();commit()}
-function resetForm(){editing=null;document.querySelector('#s-reg form').reset();$('rJoin').value=today();$('regT').textContent='طالب جديد';$('regB').textContent='💾 حفظ الطالب';onBill()}
-function editStu(id){const s=stuById(id);if(!s)return;closeAc();tab('reg');editing=id;$('rName').value=s.name;$('rAc').value=s.academy;$('rLv').value=s.level;$('rPhone').value=s.phone||'';$('rBirth').value=s.birth||'';$('rJoin').value=s.join||'';$('rAcct').value=s.acct||'academy';$('rBill').value=billOf(s);$('rTr').value=s.trainer||'';onBill();$('rAcAmt').value=s.acct==='academy'?acadAmtOf(s):'';calcPrev();$('regT').textContent='تعديل: '+s.name;$('regB').textContent='💾 حفظ التعديل';scrollTo({top:0,behavior:'smooth'})}
-function delStu(id){const s=stuById(id);if(!s||!confirm(`حذف "${s.name}" مع حضوره وتقييماته؟ (دفعاته هتفضل)`))return;lg('del','الطلاب',`حذف الطالب ${s.name} — ${acName(s.academy)}`);DB.students=DB.students.filter(x=>x.id!==id);DB.dues=DB.dues.filter(d=>d.studentId!==id);for(const k in DB.att)DB.att[k].present=(DB.att[k].present||[]).filter(x=>x!==id);for(const k in DB.evals)delete DB.evals[k][id];if(editing===id)resetForm();commit()}
+ applyPhoto(old?old.id:DB.students[DB.students.length-1].id);resetForm();commit()}
+function resetForm(){phNew=undefined;enTouched=false;showPh(null);$('phH').textContent='بتتضغط تلقائياً لحجم صغير جداً (حوالي 10 KB) عشان توفّر المساحة';editing=null;document.querySelector('#s-reg form').reset();$('rJoin').value=today();$('regT').textContent='طالب جديد';$('regB').textContent='💾 حفظ الطالب';onBill()}
+function editStu(id){const s=stuById(id);if(!s)return;closeAc();tab('reg');editing=id;$('rName').value=s.name;$('rAc').value=s.academy;$('rLv').value=s.level;$('rPhone').value=s.phone||'';$('rBirth').value=s.birth||'';$('rJoin').value=s.join||'';$('rAcct').value=s.acct||'academy';$('rBill').value=billOf(s);$('rTr').value=s.trainer||'';phNew=undefined;showPh(PH[id]||null);enTouched=!!s.nameEn;$('rNameEn').value=s.nameEn||enName(s.name);onBill();$('rAcAmt').value=s.acct==='academy'?acadAmtOf(s):'';calcPrev();$('regT').textContent='تعديل: '+s.name;$('regB').textContent='💾 حفظ التعديل';scrollTo({top:0,behavior:'smooth'})}
+function delStu(id){const s=stuById(id);if(!s||!confirm(`حذف "${s.name}" مع حضوره وتقييماته؟ (دفعاته هتفضل)`))return;lg('del','الطلاب',`حذف الطالب ${s.name} — ${acName(s.academy)}`);delPhoto(id);DB.students=DB.students.filter(x=>x.id!==id);DB.dues=DB.dues.filter(d=>d.studentId!==id);for(const k in DB.att)DB.att[k].present=(DB.att[k].present||[]).filter(x=>x!==id);for(const k in DB.evals)delete DB.evals[k][id];if(editing===id)resetForm();commit()}
 const ageOf=b=>{if(!b)return'';const d=new Date(b),n=new Date();let a=n.getFullYear()-d.getFullYear();if(n<new Date(n.getFullYear(),d.getMonth(),d.getDate()))a--;return a};
 function renderStu(){const q=$('q').value.trim(),ac=$('fAc').value,lv=$('fLv').value,tr=$('fTr').value;
  const l=DB.students.filter(s=>(!ac||s.academy===ac)&&(!tr||s.trainer===tr)&&(lv===''||String(s.level)===lv)&&(!q||s.name.includes(q)||(s.phone||'').includes(q))).sort(byName);$('stuN').textContent=l.length;
- $('stuB').innerHTML=l.length?l.map((s,i)=>{const t=trById(s.trainer);return`<tr><td>${i+1}</td><td><div class="who"><span class="av">${esc(ini(s.name))}</span><b>${esc(s.name)}</b></div></td><td><span class="bd g">${esc(acName(s.academy))}</span></td><td>${t?esc(t.name):'—'}</td><td><span class="bd">${lvN(s.level)}</span></td><td>${acB(s.acct)}</td><td>${biB(billOf(s))}</td><td>${s.acct==='academy'?money(acadAmtOf(s)):'—'}</td><td dir="ltr">${esc(s.phone)}</td><td>${esc(s.join||'')}</td><td>${ageOf(s.birth)}</td><td><button class="btn b-ink b-sm" onclick="editStu('${s.id}')">تعديل</button> <button class="btn b-red b-sm" onclick="delStu('${s.id}')">حذف</button></td></tr>`}).join(''):'<tr><td colspan="12" class="empty">مفيش طلاب</td></tr>'}
+ $('stuB').innerHTML=l.length?l.map((s,i)=>{const t=trById(s.trainer);return`<tr><td>${i+1}</td><td><div class="who">${avH(s)}<b>${esc(s.name)}</b></div></td><td><span class="bd g">${esc(acName(s.academy))}</span></td><td>${t?esc(t.name):'—'}</td><td><span class="bd">${lvN(s.level)}</span></td><td>${acB(s.acct)}</td><td>${biB(billOf(s))}</td><td>${s.acct==='academy'?money(acadAmtOf(s)):'—'}</td><td dir="ltr">${esc(s.phone)}</td><td>${esc(s.join||'')}</td><td>${ageOf(s.birth)}</td><td><button class="btn b-gold b-sm" onclick="idOpen('${s.id}')">🪪 كارت</button> <button class="btn b-ink b-sm" onclick="editStu('${s.id}')">تعديل</button> <button class="btn b-red b-sm" onclick="delStu('${s.id}')">حذف</button></td></tr>`}).join(''):'<tr><td colspan="12" class="empty">مفيش طلاب</td></tr>'}
 
 /* ===== الحضور ===== */
 let sel=new Set();
@@ -879,7 +1009,7 @@ function renderAn(){const out=$('anOut'),id=$('anSt').value;
   return`<div class="sk" style="animation-delay:${i*70}ms"><div class="sk-h"><i style="background:${k[3]}"></i>${k[1]}${d==null?'':`<span class="df ${d>0?'up':d<0?'dn':'eq'}">${d>0?'▲ +'+d:d<0?'▼ '+d:'= متطابق'}</span>`}</div><div class="sk-v">${val??'—'}<small>/ 100</small></div><div class="sk-bar"><b style="width:${val||0}%;background:${k[3]}"></b>${c?`<u style="right:${Math.min(98,c)}%"></u>`:''}</div><div class="sk-f"><span>${c!=null&&c>0?'متوسط الأكاديمية '+c:'—'}</span>${spark(st.evs.map(e=>e[k[0]]),k[3])}</div></div>`}).join('');
  const avgs=['hw','dict','abc','spd'].map(f=>avg(st.evs.map(e=>e[f]).filter(q=>q!=null)));
  out.innerHTML=`<div class="an">
- <div class="an-hero"><div class="an-id"><div class="an-av"><span>${esc(ini(s.name))}</span></div><div>
+ <div class="an-hero"><div class="an-id"><div class="an-av"><span>${PH[s.id]?`<img src="${PH[s.id]}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover">`:esc(ini(s.name))}</span></div><div>
   <h2>${esc(s.name)}</h2>
   <div class="an-chips"><span>${esc(acName(s.academy))}</span><span>${lvN(s.level)}</span><span>المدرب: ${esc(trNameOf(s))}</span><span>${mode==='all'?'كل الأيام':monthN(mo)}</span>${s.join?`<span>انضم ${sd(s.join)} ${new Date(s.join+'T00:00:00').getFullYear()}</span>`:''}</div>
   <p class="an-sum">${v.n}</p>
@@ -1015,7 +1145,7 @@ function prepLogo(){return new Promise(r=>{const i=document.querySelector('.bran
 function reportHTML(s,mode,month,pt,safe){const st=calcStats(s,mode,month),logo=safe?(LOGO_SAFE||''):(document.querySelector('.brand img').getAttribute('src')||'');
  const dt=new Date().toLocaleDateString('ar-EG',{day:'numeric',month:'long',year:'numeric'});
  const head=`<div class="rp-head"><div class="rp-org"><h1>منظمة إيدوس الدولية للسوروبان</h1><p>International Delta Organization for Soroban</p></div><div class="rp-ttl"><b>تقرير أداء الطالب</b><span>${dt}</span></div>${logo?`<img src="${logo}" alt="" onerror="this.outerHTML='<div class=&quot;rp-mono&quot;>إ</div>'">`:'<div class="rp-mono">إ</div>'}</div>`;
- const stu=`<div class="rp-stu"><div class="rp-av">${esc(ini(s.name))}</div><div><h2>${esc(s.name)}</h2><div class="rp-chips"><span>الأكاديمية: ${esc(acName(s.academy))}</span><span>${lvN(s.level)}</span><span>المدرب: ${esc(trNameOf(s))}</span></div></div><div class="rp-per"><b>${pt}</b>فترة التقرير</div></div>`;
+ const stu=`<div class="rp-stu"><div class="rp-av" style="overflow:hidden">${PH[s.id]?`<img src="${PH[s.id]}" alt="" style="width:100%;height:100%;object-fit:cover">`:esc(ini(s.name))}</div><div><h2>${esc(s.name)}</h2><div class="rp-chips"><span>الأكاديمية: ${esc(acName(s.academy))}</span><span>${lvN(s.level)}</span><span>المدرب: ${esc(trNameOf(s))}</span></div></div><div class="rp-per"><b>${pt}</b>فترة التقرير</div></div>`;
  const foot=`<div class="rp-f"><div class="rp-sig"><i></i>توقيع المدرب</div><div class="rp-fi">تم إنشاء هذا التقرير آلياً من نظام منظمة إيدوس الدولية للسوروبان<br>${dt}</div><div class="rp-sig"><i></i>اعتماد الإدارة</div></div>`;
  if(!st.recorded&&!st.evs.length)return`<section class="rp">${head}<div class="rp-body">${stu}<div class="rp-empty">لا توجد بيانات حضور أو تقييم لهذا الطالب في الفترة المحددة</div></div>${foot}</section>`;
  const cmp=acadCmp(s,mode,month),C=cfgs(st,cmp,true),ov=OV(st),v=verdict(st.rate,st.aTot,st.aAtt),ins=insights(st,cmp),last=st.evs.slice(-4).reverse();
