@@ -516,6 +516,14 @@ cfgs=function(st,cmp,br){
  C.dn={type:'doughnut',data:{labels:[`حاضر (${st.present})`,`غائب (${st.absent})`],datasets:[{data:[st.present,st.absent],backgroundColor:['#2563eb','#fb7185'],borderWidth:0,spacing:4,borderRadius:14,hoverOffset:4}]},options:{maintainAspectRatio:false,cutout:'76%',layout:{padding:6},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8,padding:14}}}},plugins:[dnPlugin(st.rate,'نسبة الحضور')]};
  return C};
 
+/* ---------- 8) تنضيف رسايل الكونسول ---------- */
+/* أيقونة التبويب (بدل خطأ favicon 404) */
+if(!document.querySelector('link[rel~=icon]')){const ic=document.createElement('link');ic.rel='icon';ic.href='logo.png';document.head.appendChild(ic)}
+/* html2canvas بيحاول ينسخ كل الرسوم اللي في الصفحة حتى المخفية (حجمها 0) ويطلّع تحذير؛ بنخليه يتجاهل أي canvas برّه العنصر اللي بيتصدّر */
+if(window.html2canvas&&!window.html2canvas.__x){const _h2c=window.html2canvas;
+ const w=function(el,o){o=o||{};const prev=o.ignoreElements;return _h2c(el,Object.assign({},o,{ignoreElements:e=>(e.tagName==='CANVAS'&&el&&el.contains&&!el.contains(e))||(prev?prev(e):false)}))};
+ w.__x=1;window.html2canvas=w}
+
 /* ---------- تشغيل ---------- */
 relabel($('s-acc'));
 navAdmin=undefined;buildNav();
