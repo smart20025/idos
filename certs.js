@@ -58,7 +58,7 @@ function lvArt(){return`<svg class="bg" width="${W}" height="${H}" viewBox="0 0 
  <path d="M0 1122V1092C260 1074 540 1114 794 1086V1122Z" fill="#05408f"/><path d="M0 1092C260 1074 540 1114 794 1086V1080C540 1108 260 1068 0 1085Z" fill="#e0a30a"/></svg>`}
 /* لوجو الدرع + كلمة IDOS (قاعدته 410×150 وبيتكبّر بـ scale) */
 function lockup(safe,k,x,y){const src=logoSrc(safe),st=`left:${x}px;top:${y}px;transform:scale(${k});transform-origin:0 0`;
- if(!LOCKUP)return`<div class="ab lk" style="${st}">${src?`<img style="width:100%;height:100%;object-fit:contain" src="${src}" alt="">`:''}</div>`;
+ if(!LOCKUP)return`<div class="ab lk" style="${st}">${src?`<img style="width:85%;height:85%;object-fit:contain" src="${src}" alt="">`:''}</div>`;
  return`<div class="ab lk" style="${st}"><div class="lk-shw">${src?`<img class="lk-sh" src="${src}" alt="">`:'<div class="lk-sh lk-mono">IDOS</div>'}</div><div class="lk-w"><div class="lk-id">IDOS<i>E<br>G<br>Y<br>P<br>T</i></div><div class="lk-ar">منظمة أيدوس الدولية للسوروبان</div><div class="lk-en">INTERNATIONAL DELTA ORGANIZATION FOR SOROBAN</div></div></div>`}
 
 /* ---------- الشهادات ---------- */
@@ -113,9 +113,9 @@ const css=`
 .ct *{box-sizing:border-box;margin:0}.ct-in{position:absolute;left:0;top:0;right:0;bottom:0}
 .ct .ab{position:absolute}.ct svg.bg{position:absolute;left:0;top:0}
 .lk{width:410px;height:150px;direction:ltr;text-align:left}
-.lk-shw{position:absolute;left:0;top:0;width:124px;height:140px}.lk-sh{width:100%;height:100%;object-fit:contain;display:block}.lk-mono{display:grid;place-items:center;background:#e0a30a;color:#111;font:900 30px serif;border-radius:12px}
+.lk-shw{position:absolute;left:0;top:0;width:124px;height:100px}.lk-sh{width:85%;object-fit:contain;display:block}.lk-mono{display:grid;place-items:center;background:#e0a30a;color:#111;font:900 30px serif;border-radius:12px}
 .lk-w{position:absolute;left:138px;top:0;width:272px;height:150px}
-.lk-id{position:relative;font:900 104px/100px 'Times New Roman',Georgia,serif;color:${BL};letter-spacing:-1px;white-space:nowrap}
+.lk-id{position:relative;font:800 104px/85px 'Times New Roman',Georgia,serif;color:${BL};letter-spacing:-1px;white-space:nowrap}
 .lk-id i{position:absolute;left:146px;top:16px;width:14px;font:600 9px/11px 'Times New Roman',serif;font-style:normal;text-align:center;letter-spacing:0}
 .lk-ar{margin-top:1px;font:700 21px/26px 'Cairo',sans-serif;color:${BL};white-space:nowrap;direction:rtl;text-align:left}
 .lk-en{font:700 9px/14px 'Times New Roman',serif;color:${BL};white-space:nowrap}
