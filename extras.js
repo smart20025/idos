@@ -501,6 +501,21 @@ reportHTML=function(s,mode,month,pt,safe){
  ${last.length?`<div class="rq-cd" style="padding:6px 10px"><table><thead><tr><th>آخر التقييمات</th><th>الواجب</th><th>الإملاء</th><th>الأيباكس</th><th>السرعة</th><th>الكلي</th></tr></thead><tbody>${last.map(e=>`<tr><td>${sd(e.d)}</td><td class="${heat(e.hw)}">${e.hw??'—'}</td><td class="${heat(e.dict)}">${e.dict??'—'}</td><td class="${heat(e.abc)}">${e.abc??'—'}</td><td class="${heat(e.spd)}">${e.spd??'—'}</td><td class="${heat(e.total)}"><b>${e.total??'—'}</b></td></tr>`).join('')}</tbody></table></div>`:''}
  </div>${foot}</section>`};
 
+/* ---------- 7) خريطة المهارات (أعمدة + خط) + دونات الحضور الاحترافي ---------- */
+const valPlugin={id:'valLbl',afterDatasetsDraw(ch){const m=ch.getDatasetMeta(0);if(!m||m.type!=='bar')return;const c=ch.ctx;c.save();c.textAlign='center';c.fillStyle='#0b1b3f';c.font='800 '+Math.max(11,Math.round(ch.chartArea.height/10))+'px '+Chart.defaults.font.family;m.data.forEach((b,i)=>{const v=ch.data.datasets[0].data[i];if(v==null)return;c.fillText(Math.round(v),b.x,b.y-8)});c.restore()}};
+const dnPlugin=(pct,sub)=>({id:'dnC',afterDraw(ch){const a=ch.chartArea;if(!a)return;const c=ch.ctx,x=(a.left+a.right)/2,y=(a.top+a.bottom)/2,H=a.bottom-a.top,ff=Chart.defaults.font.family;c.save();c.textAlign='center';c.textBaseline='middle';c.fillStyle='#0b1b3f';c.font='800 '+Math.round(H/4.2)+'px '+ff;c.fillText(pct+'%',x,y-H/16);c.fillStyle='#64748b';c.font='600 '+Math.round(H/11)+'px '+ff;c.fillText(sub,x,y+H/6);c.restore()}});
+const _cfgs=cfgs;
+cfgs=function(st,cmp,br){
+ const C=_cfgs(st,cmp,br),col=br?SKB:SK,labels=['الحضور',...col.map(k=>k[1])],vals=[st.rate,...col.map(k=>st[k[2]]??0)],cols=['#0f2a5c',...col.map(k=>k[3])];
+ const grad=ctx=>{const a=ctx.chart.chartArea,c=cols[ctx.dataIndex]||'#2563eb';if(!a)return c;const g=ctx.chart.ctx.createLinearGradient(0,a.top,0,a.bottom);g.addColorStop(0,c);g.addColorStop(1,c+'66');return g};
+ const combo={type:'bar',data:{labels,datasets:[
+  {type:'bar',label:'الطالب',data:vals,backgroundColor:grad,borderRadius:{topLeft:12,topRight:12,bottomLeft:0,bottomRight:0},borderSkipped:false,barPercentage:.58,categoryPercentage:.8,order:2},
+  {type:'line',label:cmp?'متوسط الأكاديمية':'الهدف (75)',data:cmp?cmp.slice():labels.map(()=>75),borderColor:'#7c3aed',backgroundColor:'#7c3aed',tension:.4,borderWidth:3,pointRadius:5,pointBackgroundColor:'#fff',pointBorderColor:'#7c3aed',pointBorderWidth:3,fill:false,order:1}]},
+  options:{maintainAspectRatio:false,layout:{padding:{top:20}},scales:{y:{min:0,max:100,ticks:{stepSize:25,color:'#64748b'},grid:{color:'#e6ecf8',borderDash:[4,4]},border:{display:false}},x:{grid:{display:false},border:{display:false},ticks:{color:'#334155',font:{weight:'700'}}}},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8,padding:14}}}},plugins:[valPlugin]};
+ if(br)C.radar=combo;
+ C.dn={type:'doughnut',data:{labels:[`حاضر (${st.present})`,`غائب (${st.absent})`],datasets:[{data:[st.present,st.absent],backgroundColor:['#2563eb','#fb7185'],borderWidth:0,spacing:4,borderRadius:14,hoverOffset:4}]},options:{maintainAspectRatio:false,cutout:'76%',layout:{padding:6},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8,padding:14}}}},plugins:[dnPlugin(st.rate,'نسبة الحضور')]};
+ return C};
+
 /* ---------- تشغيل ---------- */
 relabel($('s-acc'));
 navAdmin=undefined;buildNav();
