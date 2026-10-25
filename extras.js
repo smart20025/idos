@@ -91,7 +91,7 @@ renderAcc=function(){
 calcPrev=function(){
  const amt=+$('rAmt').value||0,priv=$('rAcct').value!=='academy',aEl=$('rAcAmt');aEl.disabled=priv;if(priv)aEl.value='';
  const aa=priv?0:(+aEl.value||0),a=acadCalc(amt,aa,amt),t=trById($('rTr').value);
- $('prev').innerHTML=`${$('rBill').value==='session'?'من كل حصة — ':''}المدفوع: <b>${money(amt)}</b> • ربح الأكاديمية: <b>${money(a)}</b> • مستحق المدرب${t?' ('+esc(t.name)+')':''}: <b>${money(amt-a)}</b>`};
+ $('prev').innerHTML=`<div class="sm"><span>المدفوع${$('rBill').value==='session'?' (من كل حصة)':''}</span><b>${money(amt)}</b></div><div class="sm"><span>ربح الأكاديمية</span><b>${money(a)}</b></div><div class="sm"><span>مستحق المدرب${t?' ('+esc(t.name)+')':''}</span><b>${money(amt-a)}</b></div>`};
 
 /* ---------- 3) مشتريات الكتب في ملف الطالب ---------- */
 const _rp=renderProf;
@@ -245,40 +245,68 @@ const _ci=chartImg;chartImg=function(cfg,...a){recolor(cfg);return _ci(cfg,...a)
 /* ---------- 5) تقسيمة الصفحات + وضوح الخط ---------- */
 (function(){const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap';document.head.appendChild(l)})();
 const ly=document.createElement('style');ly.textContent=`
-/* الخط: Cairo أوضح للقراءة والكتابة، والخانات أكبر */
+/* ===== الأساس: خط واضح + مسافات منتظمة ===== */
+body{font-size:15px;line-height:1.75;color:#0f172a}
 main,aside,.modal,#login{font-family:'Cairo','IBM Plex Sans Arabic','Segoe UI',Tahoma,Arial,sans-serif}
 main input,main select,main textarea,main button,main table,aside button,.modal input,.modal select,.modal textarea,.modal button,#login input,#login button{font-family:inherit}
-main{font-size:14.5px}
-main label,.modal label,#login label{font-size:13px;font-weight:700;color:#1e293b;margin-bottom:7px}
-main input:not([type=checkbox]):not([type=radio]):not([type=file]),main select,.modal input:not([type=checkbox]):not([type=radio]),.modal select,#login input{height:46px;padding:0 14px;font-size:15.5px;font-weight:500;line-height:1.4;color:#0b1b3f;letter-spacing:0}
-main td input:not([type=checkbox]):not([type=radio]),.stu input.amt{height:38px;padding:0 8px;font-size:14.5px}
+main{max-width:1280px;padding:0 36px 80px;font-size:15px}
+h1.pt{font-size:28px;font-weight:800;margin-bottom:4px;letter-spacing:0}
+h1.pt::after{display:none}
+.pg-sub{color:#64748b;font-size:14.5px;font-weight:500;margin:0 0 24px}
+.card{padding:24px 26px;border:1px solid #e2e8f4;margin-bottom:20px}
+.card>h2{font-size:17px;font-weight:700;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #eef2fa;color:#0f172a}
+.grid{gap:16px 18px}
+.hint{font-size:12.5px;color:#64748b;margin-top:6px;line-height:1.7}
+/* ===== الخانات ===== */
+main label,.modal label,#login label{font-size:13.5px;font-weight:700;color:#334155;margin-bottom:8px}
+main input:not([type=checkbox]):not([type=radio]):not([type=file]),main select,.modal input:not([type=checkbox]):not([type=radio]),.modal select,#login input{height:48px;padding:0 14px;font-size:16px;font-weight:500;line-height:1.4;color:#0f172a;background-color:#fff;border:1.5px solid #cbd5e8;border-radius:12px;letter-spacing:0}
+main input:hover,main select:hover{border-color:#94a8cf}
+main select,.modal select{appearance:none;-webkit-appearance:none;padding-left:38px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5l5 5 5-5' fill='none' stroke='%2364748b' stroke-width='1.8' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:left 14px center}
+main td input:not([type=checkbox]):not([type=radio]),.stu input.amt{height:40px;padding:0 8px;font-size:15px}
 input::placeholder{color:#8a97b5;font-weight:400}
 input[type=number],input[type=tel],input[dir=ltr]{font-variant-numeric:tabular-nums}
-/* الكروت والعناوين */
-.card{padding:22px 24px}
-.card>h2{padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--line)}
-.grid{gap:16px}
+/* ===== الأزرار ===== */
+.btn{height:42px;padding:0 20px;font-size:14.5px;font-weight:700;border-radius:12px}
+.b-sm{height:34px;padding:0 13px;font-size:13px;border-radius:10px}
+.acts{gap:10px;margin-top:20px}
+/* ===== الجداول ===== */
+.tw{border:1px solid #e2e8f4;border-radius:16px;box-shadow:none}
+th{background:#f1f5fb;color:#334155;font-size:13px;font-weight:700;padding:14px 12px;border-bottom:1px solid #e2e8f4}
+td{padding:13px 12px;font-size:14.5px;color:#0f172a;border-bottom:1px solid #eef2fa;vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+td:last-child{white-space:nowrap}
+td .btn.b-sm{margin:2px}
+/* ===== القايمة الجانبية ===== */
+nav button{font-size:14px;font-weight:600}
 .fbar{grid-template-columns:2fr 1fr 1fr 1fr}
-@media(max-width:760px){.fbar{grid-template-columns:1fr}.card{padding:18px 16px}}
-/* صفحة تسجيل الطلاب: أقسام + عمود جانبي ثابت */
-#s-reg .rg{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;align-items:start}
-#s-reg .rm{display:flex;flex-direction:column;gap:16px}
-#s-reg .fs{background:#f8faff;border:1px solid var(--line);border-radius:16px;padding:16px 18px 18px}
-#s-reg .fs h3{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;margin-bottom:14px;color:#0b1b3f}
-#s-reg .fs h3 i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;font-style:normal;font-size:13px}
-#s-reg .fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+@media(max-width:760px){.fbar{grid-template-columns:1fr}.card{padding:18px 16px}h1.pt{font-size:24px}}
+@media(max-width:860px){main{padding:0 14px 96px}}
+/* ===== صفحة تسجيل الطلاب ===== */
+#s-reg>.card:first-of-type{background:none;border:0;box-shadow:none;padding:0;backdrop-filter:none}
+#s-reg>.card:first-of-type>h2{font-size:19px;border:0;padding:0;margin-bottom:16px}
+#s-reg .rg{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}
+#s-reg .rm{display:flex;flex-direction:column;gap:20px}
+#s-reg .fs{background:#fff;border:1px solid #e2e8f4;border-radius:18px;padding:22px 24px 24px;box-shadow:var(--sh)}
+#s-reg .fs h3{display:flex;align-items:center;gap:12px;font-size:16.5px;font-weight:700;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #eef2fa;color:#0f172a}
+#s-reg .fs h3 i{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;font-style:normal;font-size:14px;font-weight:700}
+#s-reg .fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
 #s-reg .fg #rPayW{grid-column:1/-1}
-#s-reg .rs{position:sticky;top:84px;display:flex;flex-direction:column;gap:14px}
-#s-reg .rs-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--sh)}
-#s-reg .rs-box>h3{font-size:14px;font-weight:700;margin-bottom:10px;color:#0b1b3f}
-#s-reg .rs-box>label{font-size:14px;margin-bottom:12px}
-#s-reg .phrow{flex-direction:column;text-align:center;gap:12px}
-#s-reg .phprev{width:110px;height:110px;font-size:36px}
-#s-reg .prev{line-height:2.1;font-size:14px;padding:12px 14px}
+#s-reg .rs{position:sticky;top:88px;display:flex;flex-direction:column;gap:16px}
+#s-reg .rs-box{background:#fff;border:1px solid #e2e8f4;border-radius:18px;padding:18px 20px;box-shadow:var(--sh)}
+#s-reg .rs-box>h3{font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a}
+#s-reg .rs-box>label{font-size:15px;margin-bottom:14px}
+#s-reg .phrow{flex-direction:column;text-align:center;gap:14px}
+#s-reg .phprev{width:120px;height:120px;font-size:38px}
+#s-reg .prev{background:#f6f9fe;border:1px dashed #b6c8ea;border-radius:14px;padding:6px 16px;font-weight:500;color:#0f172a}
+#s-reg .prev .sm{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px dashed #d5e0f4;font-size:14.5px}
+#s-reg .prev .sm:last-child{border-bottom:0}
+#s-reg .prev .sm b{font-size:16px;color:#1d4ed8}
+#s-reg .prev .nt{padding:8px 0 0;font-size:12.5px;color:#64748b}
 #s-reg .rs-acts{display:flex;flex-direction:column;gap:10px;margin:0}
-#s-reg .rs-acts .btn{justify-content:center;width:100%;padding:13px;font-size:15px}
+#s-reg .rs-acts .btn{justify-content:center;width:100%;height:46px;font-size:15px}
+#s-reg .rs-acts .b-gold{height:52px;font-size:16.5px}
 @media(max-width:1100px){#s-reg .rg{grid-template-columns:1fr}#s-reg .rs{position:static}}
-@media(max-width:640px){#s-reg .fg{grid-template-columns:1fr}#s-reg .fs{padding:14px}}
+@media(max-width:640px){#s-reg .fg{grid-template-columns:1fr}#s-reg .fs{padding:18px 16px}}
 `;document.head.appendChild(ly);
 
 function layoutReg(){
@@ -305,4 +333,7 @@ navAdmin=undefined;buildNav();
 try{refresh()}catch(e){console.error('extras.js',e)}
 rsp();
 layoutReg();
+/* عنوان فرعي تحت اسم كل صفحة */
+const SUBS={home:'نظرة سريعة على الطلاب والإيرادات والتنبيهات',reg:'سجّل الطلاب الجدد، عدّل بياناتهم، وتابع قائمة المسجلين',att:'سجّل حضور الطلاب وحصّل الاشتراكات',eval:'قيّم الطلاب من 100 في الواجب والإملاء والأيباكس والسرعة',due:'تابع الاشتراكات المؤجلة وحصّلها',an:'تحليل أداء الطالب أو الأكاديمية أو المدرب',prof:'ملف الطالب الكامل: حضور ودرجات ودفعات ومشتريات',acc:'إيراداتك وأرباحك ومستحقات المدربين',shop:'المخزون والمبيعات والمشتريات',exp:'سجّل مصروفاتك وتابعها شهرياً',log:'كل العمليات اللي اتعملت على النظام',cert:'اطبع شهادات التقدير للطلاب'};
+for(const k in SUBS){const h=document.querySelector('#s-'+k+' > h1.pt');if(h&&!h.nextElementSibling?.classList.contains('pg-sub')){const p=document.createElement('p');p.className='pg-sub';p.textContent=SUBS[k];h.after(p)}}
 })();
