@@ -327,6 +327,180 @@ function layoutReg(){
  const q=$('q');if(q&&q.parentElement)q.parentElement.classList.add('fbar');
 }
 
+/* ---------- 6) كارت الـ ID الجديد + نموذج التحليل (التقرير) الجديد ---------- */
+(function(){const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap';document.head.appendChild(l)})();
+SKB[3][3]='#f59e0b';
+const dz=document.createElement('style');dz.textContent=`
+/* ===== كارت الـ ID ===== */
+.idc.n2{background:#041440;color:#fff;font-family:'Montserrat','Cairo',sans-serif}
+.idc.n2::after{display:none}
+.idc.n2 .n-bg{position:absolute;left:0;top:0;width:100%;height:100%}
+.idc.n2 .nlg,.idc.n2 .nlgb{position:absolute;border-radius:50%;object-fit:contain;background:#fffaf0;box-shadow:0 0 0 .35mm #ffd84a,0 .6mm 1.4mm rgba(0,0,0,.4)}
+.idc.n2 .nlg{left:4.2mm;top:2.5mm;width:8.6mm;height:8.6mm;padding:.5mm}
+.idc.n2 .nlgb{left:50%;top:5.2mm;width:16mm;height:16mm;margin-left:-8mm;padding:1.1mm}
+.idc.n2 .nmono{display:grid;place-items:center;background:linear-gradient(135deg,#ffe36e,#d9a400);color:#041440;font-weight:800;font-size:5mm;padding:0}
+.idc.n2 .nlgb.nmono{font-size:9mm}
+.idc.n2 .n-org{position:absolute;left:14.6mm;top:3.5mm;line-height:1.5;white-space:nowrap}
+.idc.n2 .n-org small{display:block;font-size:1.5mm;letter-spacing:.22mm;color:#ffd84a;font-weight:700}
+.idc.n2 .n-org b{display:block;font-size:1.55mm;letter-spacing:.22mm;color:#fff;font-weight:600}
+.idc.n2 .n-chip{position:absolute;right:4mm;top:4.6mm;font-size:1.55mm;letter-spacing:.3mm;font-weight:700;color:#ffd84a;border:.2mm solid #ffd84a;border-radius:2mm;padding:.45mm 1.8mm}
+.idc.n2 .n-ph{position:absolute;left:4.2mm;top:16.2mm;width:20mm;height:26mm;border-radius:2.3mm;padding:.7mm;background:linear-gradient(135deg,#fff1a8,#d9a400 55%,#8a6500);box-shadow:0 .8mm 2mm rgba(0,0,0,.5)}
+.idc.n2 .n-ph img,.idc.n2 .n-ph span{display:block;width:100%;height:100%;border-radius:1.7mm;border:.3mm solid #fff;object-fit:cover;object-position:50% 20%;background:#fff}
+.idc.n2 .n-ph span{display:grid;place-items:center;background:#0a2c80;color:#ffd84a;font-size:10mm;font-weight:800}
+.idc.n2 .n-rib{position:absolute;left:5.4mm;top:39.8mm;width:17.6mm;height:4mm;line-height:4mm;text-align:center;border-radius:2mm;background:linear-gradient(90deg,#b8860b,#ffe36e 50%,#d9a400);color:#041440;font-size:1.8mm;font-weight:800;letter-spacing:.35mm;box-shadow:0 .5mm 1.2mm rgba(0,0,0,.45)}
+.idc.n2 .n-nm{position:absolute;left:28.5mm;right:4.2mm;top:15.6mm;font-weight:800;line-height:1.15;max-height:10.8mm;overflow:hidden;color:#fff;text-shadow:0 .3mm .8mm rgba(0,0,0,.45)}
+.idc.n2 .n-ul{position:absolute;left:28.5mm;top:27.1mm;width:18mm;height:.5mm;border-radius:1mm;background:linear-gradient(90deg,#ffe36e,rgba(255,227,110,0))}
+.idc.n2 .n-r{position:absolute;left:28.5mm;right:21mm}
+.idc.n2 .n-r small{display:block;font-size:1.4mm;letter-spacing:.3mm;color:#ffd84a;font-weight:700;line-height:1.3}
+.idc.n2 .n-r b{display:block;font-size:2.55mm;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
+.idc.n2 .n-lv{position:absolute;right:3.6mm;top:28.2mm;width:14.8mm;height:14.8mm;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#041440}
+.idc.n2 .n-lv svg{position:absolute;left:0;top:0;width:100%;height:100%}
+.idc.n2 .n-lv small{position:relative;font-size:1.3mm;font-weight:800;letter-spacing:.25mm;line-height:1}
+.idc.n2 .n-lv b{position:relative;font-size:6.2mm;font-weight:800;line-height:1.05}
+.idc.n2 .n-bar{position:absolute;left:0;right:0;bottom:0;height:4.7mm;display:flex;align-items:center;justify-content:space-between;padding:0 4.4mm;background:linear-gradient(90deg,#8a6500,#ffe36e 50%,#d9a400)}
+.idc.n2 .n-bar span{font-size:1.5mm;font-weight:800;letter-spacing:.4mm;color:#041440}
+.idc.n2 .n-bc{width:17mm;height:2.7mm}
+.idc.n2 .n-bt{position:absolute;left:0;right:0;top:23.6mm;text-align:center;line-height:1.5}
+.idc.n2 .n-bt b{display:block;direction:rtl;font-family:'Cairo',sans-serif;font-size:4.3mm;font-weight:800;color:#ffd84a}
+.idc.n2 .n-bt small{display:block;font-size:1.7mm;letter-spacing:.3mm;color:#dbe8ff;font-weight:600}
+.idc.n2 .n-bn{position:absolute;left:8mm;right:8mm;top:34.6mm;text-align:center;font-size:1.55mm;line-height:1.7;color:#b9cdf3;font-weight:500}
+.idc.n2 .n-bn .ar{direction:rtl;font-family:'Cairo',sans-serif;font-size:1.9mm;color:#dbe8ff}
+/* ===== نموذج التحليل (A4) ===== */
+.rq{font-family:'Cairo','IBM Plex Sans Arabic',sans-serif;background:#fff}
+.rq-head{position:relative;flex:none;height:132px}
+.rq-hbg{position:absolute;left:0;top:0;width:794px;height:132px}
+.rq-ht{position:absolute;left:30px;right:30px;top:0;height:108px;display:flex;align-items:center;gap:16px;color:#fff}
+.rq-lg{flex:none;width:66px;height:66px;border-radius:50%;object-fit:contain;background:#fffaf0;padding:4px;box-shadow:0 0 0 3px #ffd84a,0 8px 18px rgba(0,0,0,.35)}
+.rq-mn{display:grid;place-items:center;background:linear-gradient(135deg,#ffe36e,#d9a400);color:#04123a;font-size:34px;font-weight:800;padding:0}
+.rq-org h1{font-size:21px;font-weight:800;color:#fff;margin:0;line-height:1.3}
+.rq-org p{font-size:10.5px;color:#bcd0f5;margin:2px 0 0;direction:ltr;text-align:right;letter-spacing:.5px}
+.rq-ttl{margin-right:auto;text-align:center}
+.rq-ttl b{display:block;font-size:15px;font-weight:800;padding:6px 18px;border-radius:999px;background:linear-gradient(135deg,#ffe36e,#d9a400);color:#04123a;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.rq-ttl span{display:block;font-size:10.5px;color:#cfdcf7;margin-top:6px}
+.rq-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:9px;padding:0 30px}
+.rq-hero{position:relative;z-index:2;margin-top:-38px;display:flex;align-items:center;gap:16px;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 14px 30px -12px rgba(11,27,63,.35);border:1px solid #e2e8f4;border-top:4px solid #2563eb}
+.rq-av{flex:none;width:76px;height:76px;border-radius:50%;padding:4px;background:linear-gradient(135deg,#ffe36e,#d9a400 55%,#2563eb);box-shadow:0 8px 18px -6px rgba(37,99,235,.55)}
+.rq-av img,.rq-av span{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;background:#fff}
+.rq-av span{display:grid;place-items:center;background:#0b1b3f;color:#93c5fd;font-size:32px;font-weight:800}
+.rq-hi h2{font-size:21px;font-weight:800;color:#0b1b3f;margin:0 0 6px}
+.rq-ch{display:flex;gap:6px;flex-wrap:wrap}
+.rq-ch span{background:#eaf2ff;color:#1e3a8a;border:1px solid #bcd3f7;border-radius:999px;padding:1px 12px;font-size:11px;font-weight:700}
+.rq-pd{font-size:11px;color:#64748b;margin-top:6px}.rq-pd b{color:#1d4ed8}
+.rq-sc{margin-right:auto;display:flex;flex-direction:column;align-items:center;gap:4px}
+.rq-rg{position:relative;width:96px;height:96px}.rq-rg svg{width:100%;height:100%}
+.rq-rn{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.rq-rn b{font-size:28px;font-weight:800;color:#0b1b3f;line-height:1}.rq-rn small{font-size:9.5px;color:#64748b}
+.rq-kp{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.rq-k{position:relative;overflow:hidden;height:64px;border-radius:14px;border:1px solid #e2e8f4;padding:8px 6px;text-align:center}
+.rq-k::before{content:"";position:absolute;left:0;right:0;top:0;height:4px}
+.rq-k::after{content:"";position:absolute;width:46px;height:46px;border-radius:50%;left:-14px;bottom:-18px;opacity:.13}
+.rq-k b{position:relative;display:block;font-size:19px;font-weight:800;color:#0b1b3f;line-height:1.3;margin-top:4px}
+.rq-k span{position:relative;font-size:9.5px;color:#64748b;font-weight:700}
+.rq-k.k1{background:linear-gradient(160deg,#fff,#eaf2ff)}.rq-k.k1::before,.rq-k.k1::after{background:#2563eb}
+.rq-k.k2{background:linear-gradient(160deg,#fff,#e8f9f0)}.rq-k.k2::before,.rq-k.k2::after{background:#10b981}
+.rq-k.k3{background:linear-gradient(160deg,#fff,#fdecee)}.rq-k.k3::before,.rq-k.k3::after{background:#e11d48}
+.rq-k.k4{background:linear-gradient(160deg,#fff,#e6f6fd)}.rq-k.k4::before,.rq-k.k4::after{background:#0ea5e9}
+.rq-k.k5{background:linear-gradient(160deg,#fff,#e9edf7)}.rq-k.k5::before,.rq-k.k5::after{background:#0f2a5c}
+.rq-k.k6{background:linear-gradient(160deg,#fff,#fff5e3)}.rq-k.k6::before,.rq-k.k6::after{background:#f59e0b}
+.rq-cd{position:relative;overflow:hidden;background:#fff;border:1px solid #e2e8f4;border-radius:16px;padding:10px 14px 12px}
+.rq-cd::after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;left:-34px;top:-40px;background:#2563eb;opacity:.05}
+.rq-cd h3{position:relative;font-size:12.5px;font-weight:800;color:#0b1b3f;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.rq-cd h3::before{content:"";width:6px;height:16px;border-radius:4px;background:linear-gradient(#38bdf8,#1d4ed8)}
+.rq-cd img{width:100%;display:block}
+.rq-r1{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.rq-r2{display:grid;grid-template-columns:1.7fr 1fr;gap:9px}
+.rq-sk{display:flex;flex-direction:column;justify-content:space-around;height:calc(100% - 26px)}
+.rq-sb{display:flex;align-items:center;gap:8px}
+.rq-sb span{width:50px;font-size:11.5px;font-weight:700;color:#334155}
+.rq-sb .tr{position:relative;flex:1;height:12px;border-radius:8px;background:#e8eefa}
+.rq-sb .tr i{position:absolute;right:0;top:0;bottom:0;border-radius:8px}
+.rq-sb .tr u{position:absolute;top:-4px;width:3px;height:20px;background:#0b1b3f;border-radius:2px}
+.rq-sb b{width:28px;text-align:left;font-size:13px;color:#0b1b3f}
+.rq-leg{font-size:9.5px;color:#64748b;margin-top:2px}
+.rq-in{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.rq-in>div{border-radius:14px;padding:9px 14px;font-size:11px;line-height:1.7}
+.rq-in b{display:block;font-size:12px;margin-bottom:3px}.rq-in p{margin:2px 0}
+.rq-in .g{background:linear-gradient(135deg,#ecfdf5,#fff);border:1px solid #bfe9d2;border-right:5px solid #10b981}.rq-in .g b{color:#047857}
+.rq-in .w{background:linear-gradient(135deg,#eff6ff,#fff);border:1px solid #bfd5f7;border-right:5px solid #2563eb}.rq-in .w b{color:#1d4ed8}
+.rq-pr{border-radius:14px;padding:9px 16px;font-size:11px;line-height:1.8;color:#e0ecff;background:linear-gradient(120deg,#0b1b3f,#12358a);border-right:6px solid #ffd84a}
+.rq-pr b{color:#ffd84a;margin-left:6px}
+.rq-vd{border-radius:14px;padding:8px 16px;font-size:11px;line-height:1.8;color:#1e3a8a;background:#eef4ff;border:1px solid #cfe0fb}
+.rq-f{flex:none;height:58px;position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:0 30px 12px;margin-top:8px}
+.rq-f::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#1d4ed8,#38bdf8 55%,#ffd84a)}
+.rq-empty{margin:50px 0;text-align:center;color:#64748b;font-size:15px}
+`;document.head.appendChild(dz);
+
+/* --- كارت الـ ID --- */
+let _n2=0;
+function nLogo(safe,cls){const mono=`<div class="${cls} nmono">I</div>`;
+ if(safe)return LOGO_SAFE?`<img class="${cls}" src="${LOGO_SAFE}" alt="">`:mono;
+ const src=(document.querySelector('.brand img')||{}).src;return src?`<img class="${cls}" src="${src}" alt="" onerror="this.outerHTML='<div class=&quot;${cls} nmono&quot;>I</div>'">`:mono}
+function nBar(seed){let h=0;for(const c of String(seed))h=(h*31+c.charCodeAt(0))>>>0;let x=0,o='';
+ for(let i=0;i<36;i++){h=(h*1103515245+12345)>>>0;const w=.35+((h>>>16)%3)*.28;o+=`<rect x="${x.toFixed(2)}" y="0" width="${w.toFixed(2)}" height="10" fill="#041440"/>`;x+=w+.32+((h>>>8)%2)*.2}
+ return`<svg class="n-bc" viewBox="0 0 ${x.toFixed(2)} 10" preserveAspectRatio="none">${o}</svg>`}
+const nGold=id=>`<linearGradient id="${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b8860b"/><stop offset=".5" stop-color="#ffe36e"/><stop offset="1" stop-color="#d9a400"/></linearGradient>`;
+cardF=function(s,o,safe){
+ const e=o||idNames(s),ph=PF[s.id]||PH[s.id],g=++_n2,n=e.n||'',code=('IDOS-'+String(s.id).slice(-6)).toUpperCase();
+ const fs=n.length<=14?4.7:n.length<=20?4.2:n.length<=28?3.7:3.2;
+ const bg=`<svg class="n-bg" viewBox="0 0 85.6 54" preserveAspectRatio="none"><defs><linearGradient id="nb${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#041440"/><stop offset=".5" stop-color="#0a2c80"/><stop offset="1" stop-color="#1650c8"/></linearGradient>${nGold('ng'+g)}</defs>
+  <rect width="85.6" height="54" fill="url(#nb${g})"/><circle cx="80" cy="6" r="30" fill="#fff" opacity=".06"/><circle cx="2" cy="58" r="26" fill="#38bdf8" opacity=".12"/>
+  <path d="M0 0H85.6V13.4H0Z" fill="#031030" opacity=".38"/>
+  <path d="M42 54C58 47 72 34 85.6 17V21C72 37 58 51 46 54Z" fill="url(#ng${g})" opacity=".95"/>
+  <path d="M52 54C66 49 77 40 85.6 28V31C77 43 66 52 56 54Z" fill="#fff" opacity=".14"/>
+  <rect x="0" y="13.2" width="85.6" height=".35" fill="url(#ng${g})" opacity=".9"/>
+  <rect x=".9" y=".9" width="83.8" height="52.2" rx="2.2" fill="none" stroke="#ffd84a" stroke-width=".22" opacity=".55"/></svg>`;
+ const hx=`<svg viewBox="0 0 100 100"><defs>${nGold('nh'+g)}</defs><polygon points="50,3 94,26 94,74 50,97 6,74 6,26" fill="url(#nh${g})" stroke="#fff" stroke-width="3.5"/></svg>`;
+ return`<div class="idc n2">${bg}${nLogo(safe,'nlg')}<div class="n-org"><small>INTERNATIONAL DELTA ORGANIZATION</small><b>FOR SOROBAN</b></div><div class="n-chip">STUDENT ID</div>
+ <div class="n-ph">${ph?`<img src="${ph}" alt="">`:`<span>${esc((n||'?').charAt(0).toUpperCase())}</span>`}</div><div class="n-rib">STUDENT</div>
+ <div class="n-nm" style="font-size:${fs}mm">${esc(n)}</div><div class="n-ul"></div>
+ <div class="n-r" style="top:29.4mm"><small>ACADEMY</small><b>${esc(e.a)}</b></div><div class="n-r" style="top:35.2mm"><small>TRAINER</small><b>${esc(e.t)}</b></div><div class="n-r" style="top:41mm"><small>ID NO.</small><b>${code}</b></div>
+ <div class="n-lv">${hx}<small>LEVEL</small><b>${s.level}</b></div>
+ <div class="n-bar"><span>STUDENT ID CARD</span>${nBar(s.id)}</div></div>`};
+function cardBk(safe){const g=++_n2;
+ const bg=`<svg class="n-bg" viewBox="0 0 85.6 54" preserveAspectRatio="none"><defs><linearGradient id="bb${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#041440"/><stop offset=".55" stop-color="#0a2c80"/><stop offset="1" stop-color="#1650c8"/></linearGradient>${nGold('bg'+g)}</defs>
+  <rect width="85.6" height="54" fill="url(#bb${g})"/><circle cx="43" cy="14" r="26" fill="#fff" opacity=".07"/><circle cx="88" cy="56" r="24" fill="#38bdf8" opacity=".14"/><circle cx="-4" cy="52" r="20" fill="#38bdf8" opacity=".1"/>
+  <rect x="0" y="22.2" width="85.6" height=".3" fill="url(#bg${g})" opacity=".8"/>
+  <rect x=".9" y=".9" width="83.8" height="52.2" rx="2.2" fill="none" stroke="#ffd84a" stroke-width=".22" opacity=".55"/>
+  <rect x="2.1" y="2.1" width="81.4" height="49.8" rx="1.6" fill="none" stroke="#ffd84a" stroke-width=".12" opacity=".35"/></svg>`;
+ return`<div class="idc n2 nb">${bg}${nLogo(safe,'nlgb')}<div class="n-bt"><b>منظمة إيدوس الدولية للسوروبان</b><small>INTERNATIONAL DELTA ORGANIZATION FOR SOROBAN</small></div>
+ <div class="n-bn">This card is the property of IDOS. Please present it upon request.<div class="ar">هذه البطاقة خاصة بالطالب ويجب إبرازها عند الطلب</div></div>
+ <div class="n-bar"><span>★ ★ ★</span>${nBar('idos-back')}</div></div>`}
+idPages=function(list,backs,safe){
+ if(list.length===1)return[`<div class="idp one"><div><div class="idcap">FRONT</div>${cardF(list[0],null,safe)}</div><div><div class="idcap">BACK</div>${cardBk(safe)}</div></div>`];
+ const P=[];for(let i=0;i<list.length;i+=10){const ch=list.slice(i,i+10);P.push(`<div class="idp">${ch.map(s=>cardF(s,null,safe)).join('')}</div>`);if(backs)P.push(`<div class="idp">${ch.map(()=>cardBk(safe)).join('')}</div>`)}return P};
+idLive=function(){if(!idCur)return;$('idPrev').innerHTML=cardF(idCur,idVals())+cardBk()};
+idLoadLogo=async function(){await Promise.all(['700 10px Montserrat','800 10px Montserrat','600 10px Montserrat','800 10px Cairo','500 10px Cairo'].map(f=>document.fonts.load(f).catch(()=>{})));await document.fonts.ready;LOGO_SAFE=await prepLogo()};
+
+/* --- نموذج التحليل (التقرير) --- */
+let _rq=0;
+reportHTML=function(s,mode,month,pt,safe){
+ const st=calcStats(s,mode,month),g=++_rq,logo=safe?(LOGO_SAFE||''):(document.querySelector('.brand img').getAttribute('src')||''),
+ dt=new Date().toLocaleDateString('ar-EG',{day:'numeric',month:'long',year:'numeric'});
+ const art=`<svg class="rq-hbg" viewBox="0 0 794 132"><defs><linearGradient id="rqa${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#041440"/><stop offset=".55" stop-color="#0a2c80"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient><linearGradient id="rqb${g}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b8860b"/><stop offset=".5" stop-color="#ffe36e"/><stop offset="1" stop-color="#d9a400"/></linearGradient></defs>
+  <rect width="794" height="132" fill="url(#rqa${g})"/><circle cx="730" cy="6" r="124" fill="#fff" opacity=".06"/><circle cx="40" cy="150" r="112" fill="#38bdf8" opacity=".14"/><circle cx="420" cy="-30" r="70" fill="#fff" opacity=".04"/>
+  <path d="M-10 112C150 78 300 132 470 102S700 80 804 104" fill="none" stroke="url(#rqb${g})" stroke-width="3.2"/>
+  <path d="M-10 122C160 92 310 136 480 110S710 90 804 112" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1.4"/>
+  <path d="M0 132V120C200 100 420 134 794 110V132Z" fill="#fff"/></svg>`;
+ const lg=logo?`<img class="rq-lg" src="${logo}" alt="" onerror="this.outerHTML='<div class=&quot;rq-lg rq-mn&quot;>إ</div>'">`:'<div class="rq-lg rq-mn">إ</div>';
+ const head=`<div class="rq-head">${art}<div class="rq-ht">${lg}<div class="rq-org"><h1>منظمة إيدوس الدولية للسوروبان</h1><p>International Delta Organization for Soroban</p></div><div class="rq-ttl"><b>تقرير أداء الطالب</b><span>${dt}</span></div></div></div>`;
+ const foot=`<div class="rq-f"><div class="rp-sig"><i></i>توقيع المدرب</div><div class="rp-fi">تم إنشاء هذا التقرير آلياً من نظام منظمة إيدوس الدولية للسوروبان<br>${dt}</div><div class="rp-sig"><i></i>اعتماد الإدارة</div></div>`;
+ const ringH=(ov,perf,has)=>{const C=2*Math.PI*52,p=Math.max(0,Math.min(100,ov||0));
+  return`<div class="rq-sc"><div class="rq-rg"><svg viewBox="0 0 120 120"><defs><linearGradient id="rqr${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs><circle cx="60" cy="60" r="52" fill="none" stroke="#e2eaf8" stroke-width="11"/>${has?`<circle cx="60" cy="60" r="52" fill="none" stroke="url(#rqr${g})" stroke-width="11" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="${C.toFixed(2)}" stroke-dashoffset="${(C*(1-p/100)).toFixed(2)}"/>`:''}</svg><div class="rq-rn"><b>${has?ov:'—'}</b><small>من 100</small></div></div><span class="stp ${statusCls(perf)}">${perf==='—'?'لا يوجد تقييم':perf}</span></div>`};
+ const hero=(ring)=>`<div class="rq-hero"><div class="rq-av">${PH[s.id]?`<img src="${PH[s.id]}" alt="">`:`<span>${esc(ini(s.name))}</span>`}</div><div class="rq-hi"><h2>${esc(s.name)}</h2><div class="rq-ch"><span>${esc(acName(s.academy))}</span><span>${lvN(s.level)}</span><span>المدرب: ${esc(trNameOf(s))}</span></div><div class="rq-pd">فترة التقرير: <b>${pt}</b></div></div>${ring}</div>`;
+ if(!st.recorded&&!st.evs.length)return`<section class="rp rq">${head}<div class="rq-body">${hero(ringH(0,'—',false))}<div class="rq-empty">لا توجد بيانات حضور أو تقييم لهذا الطالب في الفترة المحددة</div></div>${foot}</section>`;
+ const cmp=acadCmp(s,mode,month),C=cfgs(st,cmp,true),ov=OV(st),v=verdict(st.rate,st.aTot,st.aAtt),ins=insights(st,cmp),last=st.evs.slice(-3).reverse();
+ const rImg=chartImg(C.radar,400,230,18),lImg=chartImg(C.line,700,250,17),dImg=chartImg(C.dn,360,230,18);
+ const bars=[['الحضور',st.rate,cmp?cmp[0]:null,'#0f2a5c'],...SKB.map((k,i)=>[k[1],st[k[2]],cmp?cmp[i+1]:null,k[3]])].map(([n,val,c,col])=>`<div class="rq-sb"><span>${n}</span><div class="tr"><i style="width:${val||0}%;background:${col}"></i>${c?`<u style="right:${Math.min(98,c)}%"></u>`:''}</div><b>${val==null?'—':Math.round(val)}</b></div>`).join('');
+ const k=(c,a,b)=>`<div class="rq-k ${c}"><b>${a}</b><span>${b}</span></div>`;
+ return`<section class="rp rq">${head}<div class="rq-body">${hero(ringH(ov,v.perf,true))}
+ <div class="rq-kp">${k('k1',st.total,'الحصص المقررة')}${k('k2',st.present,'حضور')}${k('k3',st.absent,'غياب')}${k('k4',st.rate+'%','نسبة الحضور')}${k('k5',st.aTot??'—','متوسط التقييم')}${k('k6',trendOf(st),'الاتجاه')}</div>
+ <div class="rq-r1"><div class="rq-cd"><h3>مستوى المهارات</h3><div class="rq-sk">${bars}<div class="rq-leg">الخط الأسود على كل شريط = متوسط الأكاديمية</div></div></div><div class="rq-cd"><h3>خريطة المهارات</h3><img src="${rImg}" alt=""></div></div>
+ <div class="rq-r2"><div class="rq-cd"><h3>تطور المهارات عبر الحصص</h3><img src="${lImg}" alt=""></div><div class="rq-cd"><h3>الحضور والغياب</h3><img src="${dImg}" alt=""></div></div>
+ <div class="rq-in"><div class="g"><b>نقاط القوة</b>${ins.g.length?ins.g.slice(0,2).map(x=>`<p>${x}</p>`).join(''):'<p>لا توجد بيانات كافية بعد</p>'}</div><div class="w"><b>نقاط تحتاج متابعة</b>${ins.w.length?ins.w.slice(0,2).map(x=>`<p>${x}</p>`).join(''):'<p>لا توجد نقاط ضعف ملحوظة</p>'}</div></div>
+ ${ins.tip?`<div class="rq-pr"><b>إلى ولي الأمر الكريم:</b>${ins.tip}.</div>`:`<div class="rq-vd"><b>الخلاصة:</b> ${v.n}</div>`}
+ ${last.length?`<div class="rq-cd" style="padding:6px 10px"><table><thead><tr><th>آخر التقييمات</th><th>الواجب</th><th>الإملاء</th><th>الأيباكس</th><th>السرعة</th><th>الكلي</th></tr></thead><tbody>${last.map(e=>`<tr><td>${sd(e.d)}</td><td class="${heat(e.hw)}">${e.hw??'—'}</td><td class="${heat(e.dict)}">${e.dict??'—'}</td><td class="${heat(e.abc)}">${e.abc??'—'}</td><td class="${heat(e.spd)}">${e.spd??'—'}</td><td class="${heat(e.total)}"><b>${e.total??'—'}</b></td></tr>`).join('')}</tbody></table></div>`:''}
+ </div>${foot}</section>`};
+
 /* ---------- تشغيل ---------- */
 relabel($('s-acc'));
 navAdmin=undefined;buildNav();
