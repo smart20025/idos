@@ -242,9 +242,67 @@ SKB[0][3]='#2563eb';SKB[1][3]='#0f2a5c';SKB[2][3]='#0ea5e9';SKB[3][3]='#94a3b8';
 const _mk=mk;mk=function(id,cfg){recolor(cfg);return _mk(id,cfg)};
 const _ci=chartImg;chartImg=function(cfg,...a){recolor(cfg);return _ci(cfg,...a)};
 
+/* ---------- 5) تقسيمة الصفحات + وضوح الخط ---------- */
+(function(){const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap';document.head.appendChild(l)})();
+const ly=document.createElement('style');ly.textContent=`
+/* الخط: Cairo أوضح للقراءة والكتابة، والخانات أكبر */
+main,aside,.modal,#login{font-family:'Cairo','IBM Plex Sans Arabic','Segoe UI',Tahoma,Arial,sans-serif}
+main input,main select,main textarea,main button,main table,aside button,.modal input,.modal select,.modal textarea,.modal button,#login input,#login button{font-family:inherit}
+main{font-size:14.5px}
+main label,.modal label,#login label{font-size:13px;font-weight:700;color:#1e293b;margin-bottom:7px}
+main input:not([type=checkbox]):not([type=radio]):not([type=file]),main select,.modal input:not([type=checkbox]):not([type=radio]),.modal select,#login input{height:46px;padding:0 14px;font-size:15.5px;font-weight:500;line-height:1.4;color:#0b1b3f;letter-spacing:0}
+main td input:not([type=checkbox]):not([type=radio]),.stu input.amt{height:38px;padding:0 8px;font-size:14.5px}
+input::placeholder{color:#8a97b5;font-weight:400}
+input[type=number],input[type=tel],input[dir=ltr]{font-variant-numeric:tabular-nums}
+/* الكروت والعناوين */
+.card{padding:22px 24px}
+.card>h2{padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.grid{gap:16px}
+.fbar{grid-template-columns:2fr 1fr 1fr 1fr}
+@media(max-width:760px){.fbar{grid-template-columns:1fr}.card{padding:18px 16px}}
+/* صفحة تسجيل الطلاب: أقسام + عمود جانبي ثابت */
+#s-reg .rg{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;align-items:start}
+#s-reg .rm{display:flex;flex-direction:column;gap:16px}
+#s-reg .fs{background:#f8faff;border:1px solid var(--line);border-radius:16px;padding:16px 18px 18px}
+#s-reg .fs h3{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;margin-bottom:14px;color:#0b1b3f}
+#s-reg .fs h3 i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;font-style:normal;font-size:13px}
+#s-reg .fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+#s-reg .fg #rPayW{grid-column:1/-1}
+#s-reg .rs{position:sticky;top:84px;display:flex;flex-direction:column;gap:14px}
+#s-reg .rs-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--sh)}
+#s-reg .rs-box>h3{font-size:14px;font-weight:700;margin-bottom:10px;color:#0b1b3f}
+#s-reg .rs-box>label{font-size:14px;margin-bottom:12px}
+#s-reg .phrow{flex-direction:column;text-align:center;gap:12px}
+#s-reg .phprev{width:110px;height:110px;font-size:36px}
+#s-reg .prev{line-height:2.1;font-size:14px;padding:12px 14px}
+#s-reg .rs-acts{display:flex;flex-direction:column;gap:10px;margin:0}
+#s-reg .rs-acts .btn{justify-content:center;width:100%;padding:13px;font-size:15px}
+@media(max-width:1100px){#s-reg .rg{grid-template-columns:1fr}#s-reg .rs{position:static}}
+@media(max-width:640px){#s-reg .fg{grid-template-columns:1fr}#s-reg .fs{padding:14px}}
+`;document.head.appendChild(ly);
+
+function layoutReg(){
+ const f=document.querySelector('#s-reg form');if(!f||f.dataset.done)return;f.dataset.done=1;
+ const W=id=>{const e=$(id);return e?(e.closest('.grid > div')||e.parentElement):null};
+ const acts=f.querySelector('.acts');
+ const sec=(n,t,ids)=>{const s=document.createElement('div');s.className='fs';s.innerHTML=`<h3><i>${n}</i>${t}</h3><div class="fg"></div>`;const g=s.lastChild;ids.forEach(id=>{const w=W(id);if(w)g.appendChild(w)});return s};
+ const s1=sec(1,'بيانات الطالب',['rName','rNameEn','rPhone','rBirth']);
+ const s2=sec(2,'الأكاديمية والمستوى',['rAc','rTr','rLv','rJoin']);
+ const s3=sec(3,'الاشتراك والحساب',['rAcct','rBill','rAmt','rAcAmt','rPayW']);
+ const rm=document.createElement('div');rm.className='rm';rm.append(s1,s2,s3);
+ const ph=W('phFile');ph.removeAttribute('style');ph.className='rs-box';
+ const pw=W('prev');pw.removeAttribute('style');pw.className='rs-box';pw.insertAdjacentHTML('afterbegin','<h3>ملخص الحساب</h3>');
+ acts.className='rs-acts';
+ const rs=document.createElement('div');rs.className='rs';rs.append(ph,pw,acts);
+ const rg=document.createElement('div');rg.className='rg';rg.append(rm,rs);
+ f.textContent='';f.appendChild(rg);
+ const q=$('q');if(q&&q.parentElement)q.parentElement.classList.add('fbar');
+}
+
 /* ---------- تشغيل ---------- */
 relabel($('s-acc'));
 navAdmin=undefined;buildNav();
 try{refresh()}catch(e){console.error('extras.js',e)}
 rsp();
+layoutReg();
 })();
